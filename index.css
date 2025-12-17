@@ -281,50 +281,149 @@ nav ul li a:hover {
 }
 
 /* Secciones */
+
+
 .sect {
-    padding: 40px 20px;
+    padding: 60px 5%;
+    background-color: #ffffff;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilo del Título con el símbolo » */
+.sect h1 {
+    font-family: "Bahnschrift", "Segoe UI", sans-serif;
+    font-size: 28px;
+    color: #666;
+    text-align: left; /* Alineado a la izquierda como la foto */
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.sect h1::before {
+    content: "» ";
+    color: #999;
+}
+
+/* Quitamos la línea de abajo  */
+.sect h1::after { display: none; }
+
+/* Contenedor principal de las tarjetas */
+.contenedor-recientes {
+    display: flex;
+    gap: 30px;
+    align-items: stretch;
+}
+
+/* Estilo común de las tarjetas */
+.card-reciente {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 25px; /* Bordes muy redondeados */
+    overflow: hidden;
+    display: flex;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-reciente:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.card-reciente img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* TARJETA 1: Vertical (Izquierda) */
+.card-v {
+    flex-direction: column;
+    width: 350px;
+    flex-shrink: 0;
+}
+
+.card-v .img-box {
+    height: 320px;
+}
+
+/* TARJETA 2: Horizontal (Derecha) */
+.card-h {
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+.card-h .img-box {
+    flex: 1.2;
+    order: 2; /* Imagen a la derecha */
+}
+
+/* Contenedores de texto */
+.text-box {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.card-h .text-box {
+    flex: 1;
+    padding: 40px;
+}
+
+.text-box h3 {
+    font-size: 22px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+}
+
+.text-box p.sub {
+    color: #888;
+    font-size: 14px;
+}
+
+.text-box .fecha {
+    margin-top: auto;
+    font-size: 11px;
+    color: #aaa;
+}
+
+/* Ajuste móvil */
+@media (max-width: 992px) {
+    .contenedor-recientes {
+        flex-direction: column;
+    }
+    .card-v, .card-h {
+        width: 100%;
+        flex-direction: column;
+    }
+    .card-h .img-box { order: 0; }
+}
+
+/* Evita que el estilo de las tarjetas nuevas afecte a la sección de Premiados */
+#premiadoas {
+    display: block;
     text-align: center;
 }
 
-.sect h1 {
-    font-family: "Bahnschrift", "Segoe UI", sans-serif;
-  font-weight: 700;      
-  font-style: normal;
-  font-size: 2.4rem;             
-  letter-spacing: 2px;          
-  color: #222;     
-  text-align: center;
-  margin: 40px 0 25px;         
-  line-height: 1.2;
-  position: relative;
-}
-
-.sect h1::after {
-  content: "";
-  display: block;
-  width: 80px;
-  height: 3px;
-  background-color: #3b3b3b;   
-  margin: 12px auto 0;
-  border-radius: 2px;
-  opacity: 0.85;
-}
-
-.sect div {
+#premiadoas div {
     display: inline-block;
-    margin: 10px;
-    transition: transform 0.1s;
+    vertical-align: top;
+    width: 300px; /* Tamaño fijo para las fotos de abajo */
+    margin: 15px;
 }
 
-.sect div img {
-    width: 300px;
-    height: auto;
-    border-radius: 10px;
-}
-
-.sect div:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+/* Recupera la línea decorativa solo para el título de Premiados */
+#premiadoas h1::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #3b3b3b;
+    margin: 12px auto 0;
+    border-radius: 2px;
 }
 
 /* Footer */

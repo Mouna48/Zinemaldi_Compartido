@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Los domingos gana la Concha de Oro</title>
+    <link rel="icon" type="image/png" href="imgs/PNGnegrotxiki2.png">
+
+    <!-- CSS GENERAL DE NOTICIAS -->
+    <link rel="stylesheet" href="noticias.css">
+
+    <!-- CSS ESPECÍFICO SOLO PARA ESTA PÁGINA -->
+    <link rel="stylesheet" href="noticia-domingos.css">
+</head>
+
+<body>
+
+<header>
+   <nav>
+		<!-- Logo -->
+            <a href="index.html">
+                <img src="imgs/logozineV.svg" alt="Logo Festival San Sebastián"/>
+            </a>
+		<!-- Contenedor Principal -->
+    <div class="contmenu">
+        
+        <div class="menu1">
+            
+            
+
+            <!-- Agrupación de Enlaces de Navegación (NOTICIAS, EMISIONES, etc.) -->
+            <div class="nav-links">
+                <a href="Noticias.html">Noticias</a>
+                <!-- ELIMINADO: Enlace a "Prensa" -->
+                <a href="emisiones.html">Emisiones</a>
+                <a href="galeria.html">Galería</a>
+                <a href="contacto.html">Contacto</a>
+            </div>
+            
+            <!-- Agrupación de Idiomas (ES, EU, EN) -->
+            <div class="lang-links">
+                 <a href="#">ES</a>
+                 <a href="#">EU</a>
+                 <a href="#">EN</a>
+            </div>
+
+        </div>
+        
+        <div class="menu2">
+            
+            <!-- Iconos Sociales (con las rutas SRC originales) -->
+            <div class="social-icons flex gap-4 mr-4">
+            <!-- Icono Instagram -->
+                <a href="https://www.instagram.com/sansebastianfes/" title="Instagram">
+                    <img src="imgs/Trazado3.png" alt="insta"></a>
+                <!-- Icono Twitter -->
+                <a href="https://twitter.com/sansebastianfes" title="Twitter">
+                    <img src="imgs/Trazado2.png" alt="twitter">
+                </a>
+                <!-- Icono Facebook -->
+                <a href="https://www.facebook.com/sansebastianfestival" title="Facebook">
+                    <img src="imgs/Trazado1.png" alt="fb">
+                </a>
+            </div>
+
+            <!-- Barra de Búsqueda (Input + Lupa) -->
+            <div class="search-container">
+                <input type="text" placeholder="" />
+                <!-- Icono Buscar -->
+                <div class="search-icon">
+                    <a href="#" class="icono-buscar" title="Buscar">
+                        <img src="imgs/Trazado-1.png" alt="buscar"/>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Icono Perfil (con la ruta SRC original) -->
+            <div class="pictos ml-4"> 
+                <a href="InicioSesion.html" class="icono-perfil" title="Perfil">
+                    <img src="imgs/User.png" alt="user"/>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+    </nav>
+</header>
+
+<div class="linea-separadora"></div>
+
+<main class="detalle-noticia">
+
+    <!-- BLOQUE SUPERIOR -->
+    <section class="bloque-superior">
+        <img src="imgs/looos domingos.webp"
+             alt="Los domingos"
+             class="imagen-principal">
+
+        <div class="texto-superior">
+            <h2>«Los domingos» gana la Concha de Oro</h2>
+            <p class="fecha">📅 Publicado: 27 de septiembre de 2025</p>
+
+            <p>
+                El largometraje <em>Los domingos / Sundays</em>, dirigido por Alauda Ruiz de Azúa,
+                se ha alzado con la Concha de Oro en la 73ª edición del Festival Internacional
+                de Cine de San Sebastián.
+            </p>
+        </div>
+    </section>
+
+    <!-- TEXTO CENTRAL -->
+    <section class="texto-detalle">
+        <p>
+            La película aborda con una mirada íntima y realista las relaciones familiares,
+            explorando los silencios, los conflictos no resueltos y las emociones contenidas
+            que atraviesan varias generaciones.
+        </p>
+
+        <p>
+            El jurado ha destacado la solidez del guion, la precisión de la dirección y la
+            profundidad de las interpretaciones, subrayando la capacidad de la directora
+            para construir un relato cercano y universal.
+        </p>
+    </section>
+
+    <!-- SECCIÓN EXTRA -->
+    <section class="texto-detalle">
+        <h3>Un reconocimiento clave en el certamen</h3>
+
+        <p>
+            La Concha de Oro supone el máximo reconocimiento del Festival de San Sebastián
+            y confirma el buen momento del cine español dentro del panorama internacional.
+        </p>
+    </section>
+
+    <!-- GALERÍA INFERIOR -->
+    <section class="galeria-inferior">
+        <img src="imgs/LosDomingos.jpg" alt="Imagen adicional del film">
+        <img src="imgs/RodajeDomingos.jpg" alt="Rodaje de la película">
+    </section>
+
+    <!-- CIERRE -->
+    <section class="texto-detalle">
+        <p>
+            Con este galardón, Alauda Ruiz de Azúa refuerza su trayectoria y se consolida como
+            una de las voces más relevantes del cine contemporáneo.
+        </p>
+    </section>
+
+</main>
+
+<footer class="footer-gen">
+    <div class="footer-cont">
+        <div class="footer-col-1">
+            <img src="imgs/PNGBLANCO.png" class="logo-img">
+            <p>© Festival de San Sebastián</p>
+        </div>
+
+        <div class="footer-col-2">
+            <h4>- Suscríbete a nuestro newsletter -</h4>
+            <div class="newsletter">
+                <input type="email" placeholder="Correo electrónico">
+                <button>Enviar</button>
+            </div>
+        </div>
+
+        <div class="footer-col-3">
+            <address>
+                497 Evergreen Rd. Roseville, CA 95673<br>
+                +44 345 678 903<br>
+                adobeixd@gmail.com
+            </address>
+        </div>
+    </div>
+</footer>
+<button id="btnTop" title="Volver arriba">↑</button>
+<script>
+const btnTop = document.getElementById("btnTop");
+
+window.onscroll = function() {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        btnTop.style.display = "block";
+    } else {
+        btnTop.style.display = "none";
+    }
+};
+
+btnTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+<script>
+const faders = document.querySelectorAll(".fade-in");
+
+const appearOnScroll = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+        }
+    });
+}, { threshold: 0.3 });
+
+faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+});
+</script>
+</body>
+</html>

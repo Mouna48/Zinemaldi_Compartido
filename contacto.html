@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Festival de San Sebastián</title>
+    <link rel="icon" type="image/png" href="imgs/PNGnegrotxiki2.png">
+    <link rel="stylesheet" href="contacto.css">
+</head>
+<body>
+ <header>
+    <nav>
+		<!-- Logo -->
+            <a href="index.html">
+                <img src="imgs/logozineV.svg" alt="Logo Festival San Sebastián"/>
+            </a>
+		<!-- Contenedor Principal: Usa justify-content: space-between; -->
+    <div class="contmenu">
+        
+        <!-- Grupo Izquierda: Logo + Menú + Idiomas (Corresponde a tu .menu1 original, pero reorganizado) -->
+        <div class="menu1">
+            
+            
+
+            <!-- Agrupación de Enlaces de Navegación (NOTICIAS, EMISIONES, etc.) -->
+            <div class="nav-links">
+                <a href="Noticias.html">Noticias</a>
+                <a href="emisiones.html">Emisiones</a>
+                <a href="galeria.html">Galería</a>
+                <a href="contacto.html">Contacto</a>
+            </div>
+            
+            <!-- Agrupación de Idiomas -->
+            <div class="lang-links">
+                 <a href="#">ES</a>
+                 <a href="#">EU</a>
+                 <a href="#">EN</a>
+            </div>
+
+        </div>
+        
+        <div class="menu2">
+            
+            <div class="social-icons flex gap-4 mr-4">
+               <!-- Icono Instagram -->
+                <a href="https://www.instagram.com/sansebastianfes/" title="Instagram">
+                    <img src="imgs/Trazado3.png" alt="insta"></a>
+                <!-- Icono Twitter -->
+                <a href="https://twitter.com/sansebastianfes" title="Twitter">
+                    <img src="imgs/Trazado2.png" alt="twitter">
+                </a>
+                <!-- Icono Facebook -->
+                <a href="https://www.facebook.com/sansebastianfestival" title="Facebook">
+                    <img src="imgs/Trazado1.png" alt="fb">
+                </a>
+            </div>
+
+            <!-- Barra de Búsqueda -->
+            <div class="search-container">
+                <input type="text" placeholder="" />
+                <div class="search-icon">
+                    <a href="#" class="icono-buscar" title="Buscar">
+                        <img src="imgs/Trazado-1.png" alt="buscar"/>
+                    </a>
+                </div>
+            </div>
+
+            <div class="pictos ml-4"> 
+                <a href="InicioSesion.html" class="icono-perfil" title="Perfil">
+                    <img src="imgs/User.png" alt="user"/>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+    </nav>
+</header>
+
+    <div><h1>Contacto</h1></div>
+
+<main class="contacto">
+    <h1>Contacta con nuestro equipo</h1>
+    <form action="paginaAction.php">
+        <fieldset>
+            <label for="nom">Nombre:</label><br/>
+            <input type="text" name="nom" id="nom" placeholder="Tu nombre"/><br/><br/>
+
+            <label for="correo">Email:</label><br/>
+            <input type="email" name="correo" id="correo" placeholder="tu@email.com"/><br/><br/>
+
+            <label for="mensj">Tu mensaje:</label><br/>
+            <textarea name="mensj" id="mensj" placeholder="Escribe tu mensaje aquí"></textarea><br/><br/>
+
+            <label for="mayor">
+                <input type="checkbox" name="mayor" value="mayor" id="mayor"/>
+                He leído y acepto recibir publicidad o información promocional.
+            </label><br/><br/>
+
+            <input type="submit" value="Enviar"/>
+            <input type="reset" value="Reset"/>
+        </fieldset>
+    </form>
+</main>
+
+<div class="footer-gen">
+  <footer class="footer-cont">
+            
+            <!-- Columna 1 --><div class="footer-col-1">
+                <img src="imgs/PNGBLANCO.png" alt="Logo Festival Blanco" class="logo-img"/>                
+                <div class="social-icons flex gap-4 mt-4">
+                     <!-- Twitter --><a href="#" title="Twitter"><img src="imgs/Trazado39.png" alt="twitter"/></a>
+                    <!-- Instagram --><a href="#" title="Instagram"><img src="imgs/Trazado40.png" alt="insta" /></a>
+                    <!-- Facebook --><a href="#" title="Facebook"><img src="imgs/Trazado38.png" alt="fb"/></a>
+                </div>
+                
+                <p>© Festival de San Sebastián</p>
+            </div>
+
+            <!-- Columna 2 --><div class="footer-col-2">
+                <h4>- Suscríbete a nuestro newsletter - </h4>
+                <div class="newsletter">
+                    <input type="email" placeholder="Correo electrónico"/>
+                    <button>Enviar</button>
+                </div>
+            </div>
+
+            <!-- Columna 3 --><div class="footer-col-3">
+                <address>
+                    497 Evergreen Rd. Roseville, CA 95673<br>
+                    +44 345 678 903<br>
+                    <a href="mailto:adobeixd@gmail.com">adobeixd@gmail.com</a>
+                </address>
+            </div>
+  </footer>
+    </div>
+</body>
+</html>

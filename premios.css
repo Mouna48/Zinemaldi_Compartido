@@ -1,0 +1,154 @@
+/* ==========================
+   CSS PREMIOS NUEVO
+   ========================== */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #222;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #fff;
+    border: none; /* إزالة أي خط أزرق */
+    box-shadow: none;
+}
+
+header nav a {
+    outline: none;
+    text-decoration: none;
+    color: #000;
+}
+
+header nav a img {
+    height: 50px;
+}
+
+/* قائمة الروابط */
+.contmenu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #000;
+    text-decoration: none;
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+.lang-links a {
+    color: #000;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+/* خط فاصل */
+.linea-separadora {
+    height: 2px;
+    background-color: #ccc;
+    margin-bottom: 20px;
+}
+
+/* العنوان الرئيسي */
+h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* MAIN */
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    flex: 1; /* ليملأ الفراغ أسفل الفوتر */
+}
+
+/* NOTICIAS */
+.noticia {
+    display: flex;
+    flex-direction: column; /* الصورة فوق النص */
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.noticia img.foto-noticia {
+    max-width: 300px;
+    border-radius: 5px;
+}
+
+/* محتوى النص أسفل الصورة */
+.contenido-noticia {
+    width: 300px; /* نفس عرض الصورة */
+}
+
+/* عنوان داخل الخبر */
+.contenido-noticia h2 {
+    margin-top: 0;
+}
+
+.contenido-noticia p.fecha {
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* Corner fold effect */
+.noticia.corner img.foto-noticia {
+    position: relative;
+}
+
+.noticia.corner img.foto-noticia::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, transparent 50%, #ccc 50%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+    pointer-events: none;
+}
+
+/* FOOTER */
+footer {
+    background-color: #f1f1f1;
+    color: #000;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+footer a {
+    color: #000;
+    text-decoration: none;
+}
+
+/* GALERÍA */
+.galeria-inferior img {
+    width: 48%;
+    margin: 1%;
+    border-radius: 5px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .noticia img.foto-noticia,
+    .contenido-noticia {
+        width: 100%;
+    }
+}

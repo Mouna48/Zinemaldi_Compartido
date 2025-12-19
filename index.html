@@ -79,11 +79,46 @@
 </header>
 
 <!-- Banner -->
-<main class="banner" id="ban">
+<!-- <main class="banner" id="ban">
     <img src="imgs/YE2.jpg" alt="Banner Festival" />
+</main> -->
+
+<!-- Carrusel modificado y sacado de bootstrap -->
+<main class="banner-carrusel">
+    <div id="carruselPrincipal" class="carrusel-slide">
+        
+        <div class="carrusel-inner">
+            <div class="carrusel-item active">
+                <img src="imgs/YE2.jpg" alt="Diapositiva 1" class="d-block w-100">
+            </div>
+            <div class="carrusel-item">
+                <img src="imgs/banner2.jpg" alt="Diapositiva 2" class="d-block w-100">
+            </div>
+            <div class="carrusel-item">
+                <img src="imgs/banner3.jpg" alt="Diapositiva 3" class="d-block w-100">
+            </div>
+        </div>
+
+        <div class="carrusel-indicators">
+            <button type="button" data-slide-to="0" class="active" aria-current="true" aria-label="Diapositiva 1"></button>
+            <button type="button" data-slide-to="1" aria-label="Diapositiva 2"></button>
+            <button type="button" data-slide-to="2" aria-label="Diapositiva 3"></button>
+        </div>
+        
+        <button class="carrusel-control-prev" type="button" data-slide="prev">
+            <img src="imgs/prev.png" alt="Anterior" class="icono-control">
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        
+        <button class="carrusel-control-next" type="button" data-slide="next">
+            <img src="imgs/next.png" alt="Siguiente" class="icono-control">
+            <span class="visually-hidden">Siguiente</span>
+        </button>
+
+    </div>
 </main>
 
-<!-- Carrusel -->
+<!-- Carrusel 2 -->
 <!-- <div class="carrusel"><p>Aquí va el carrusel</p></div>-->
 
 <!-- Sección recientes -->
@@ -168,6 +203,9 @@
     </div>
 <button id="btnTop" aria-label="Volver arriba">↑</button>
 <script>
+
+
+    
 const btnTop = document.getElementById("btnTop");
 
 window.onscroll = function() {
@@ -188,6 +226,6 @@ btnTop.addEventListener("click", () => {
 });
 </script>
 
-
+<script src="index.js"></script>
 </body>
 </html>

@@ -1,0 +1,123 @@
+/* ==========================
+   PREMIOS – FIX FINAL
+   ========================== */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* ❌ إزالة أي خط أو pseudo-element موروث */
+.detalle-texto h1,
+.detalle-texto h1::after,
+.detalle-texto h1::before {
+    border: none !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+    content: none !important;
+}
+
+/* CONTENIDO */
+.detalle-noticia {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* BLOQUE SUPERIOR */
+.detalle-cabecera {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.detalle-cabecera img {
+    width: 340px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.detalle-texto {
+    flex: 1;
+}
+
+.detalle-texto h1 {
+    margin: 0 0 10px;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.fecha {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* TEXTO */
+.detalle-contenido {
+    margin-bottom: 40px;
+}
+
+/* GALERÍA */
+.detalle-galeria {
+    display: flex;
+    gap: 20px;
+}
+
+.detalle-galeria img {
+    width: 320px;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* BOTÓN */
+#btnTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: none;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 1000;
+    transition: background 0.3s;
+}
+
+#btnTop:hover {
+    background-color: #555;
+}
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .detalle-cabecera {
+        flex-direction: column;
+    }
+
+    .detalle-cabecera img,
+    .detalle-galeria img {
+        width: 100%;
+        height: 220px;
+    }
+
+    .detalle-galeria {
+        flex-direction: column;
+    }
+}
+

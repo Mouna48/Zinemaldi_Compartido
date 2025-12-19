@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Crecimiento de asistentes - Festival de San Sebastián</title>
+    <link rel="icon" type="image/png" href="imgs/PNGnegrotxiki2.png">
+    <link rel="stylesheet" href="noticias.css">
+    <link rel="stylesheet" href="noticia-domingos.css">
+</head>
+
+<body>
+<header>
+    <nav>
+		<!-- Logo -->
+            <a href="index.html">
+                <img src="imgs/logozineV.svg" alt="Logo Festival San Sebastián">
+            </a>
+		<!-- Contenedor Principal: Usa justify-content: space-between; -->
+    <div class="contmenu">
+        
+        <!-- Grupo Izquierda: Logo + Menú + Idiomas (Corresponde a tu .menu1 original, pero reorganizado) -->
+        <div class="menu1">
+            
+            
+
+            <!-- Agrupación de Enlaces de Navegación (NOTICIAS, EMISIONES, etc.) -->
+            <div class="nav-links">
+                <a href="Noticias.html">Noticias</a>
+                <a href="emisiones.html">Emisiones</a>
+                <a href="galeria.html">Galería</a>
+                <a href="contacto.html">Contacto</a>
+            </div>
+            
+            <!-- Idiomas -->
+            <div class="lang-links">
+                 <a href="#">ES</a>
+                 <a href="#">EU</a>
+                 <a href="#">EN</a>
+            </div>
+
+        </div>
+        
+        <div class="menu2">
+            
+            <!-- Redes sociales -->
+            <div class="social-icons">
+                <!-- Icono Instagram -->
+                <a href="https://www.instagram.com/sansebastianfes/" title="Instagram">
+                    <img src="imgs/Trazado3.png" alt="insta"></a>
+                <!-- Icono Twitter -->
+                <a href="https://twitter.com/sansebastianfes" title="Twitter">
+                    <img src="imgs/Trazado2.png" alt="twitter">
+                </a>
+                <!-- Icono Facebook -->
+                <a href="https://www.facebook.com/sansebastianfestival" title="Facebook">
+                    <img src="imgs/Trazado1.png" alt="fb">
+                </a>
+            </div>
+
+            <!-- Barra de Búsqueda -->
+            <div class="search-container">
+                <input type="text" placeholder="">
+                <!-- Icono Buscar -->
+                <div class="search-icon">
+                    <a href="#" class="icono-buscar" title="Buscar">
+                        <img src="imgs/Trazado-1.png" alt="buscar"/>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Icono Perfil (con la ruta SRC original) -->
+            <div class="pictos ml-4"> 
+                <a href="InicioSesion.html" class="icono-perfil" title="Perfil">
+                    <img src="imgs/User.png" alt="user"/>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+    </nav>
+</header>
+<div class="linea-separadora"></div>
+
+<main class="detalle-noticia">
+
+    <section class="bloque-superior">
+        <img src="imgs/asistente2.jpg" alt="Público Festival" class="imagen-principal">
+
+        <div class="texto-superior">
+            <h2>El Festival de San Sebastián sigue creciendo en asistentes (181.000) y supera por cuarto año consecutivo el récord de personas acreditadas (5.500)</h2>
+            <p class="fecha">📅 Publicado: septiembre de 2025</p>
+            <p class="descripcion-corta">
+                Un total de 181.183 espectadoras y espectadores asistieron a las 666 proyecciones de esta 73ª edición, marcando un crecimiento del 5,15% y reafirmando el éxito del certamen.
+            </p>
+        </div>
+    </section>
+
+    <section class="texto-detalle">
+        <p>
+            La ciudad de San Sebastián ha vuelto a demostrar su pasión por el séptimo arte. Durante los diez días de duración del festival, las salas han lucido un aspecto inmejorable, con un flujo constante de asistentes que han llenado tanto las sesiones de tarde como las proyecciones matinales para profesionales.
+        </p>
+        <p>
+            El aumento en el número de personas acreditadas, que ha alcanzado la cifra récord de 5.500, subraya la relevancia del certamen como epicentro de la industria cinematográfica internacional. Este crecimiento no es solo cuantitativo, sino cualitativo, atrayendo a distribuidores y críticos de los cinco continentes.
+        </p>
+    </section>
+
+    <section class="galeria-inferior">
+        <img src="imgs/kursal.jpg" alt="Público en el Kursaal">
+        <img src="imgs/Rueda de prensa.avif" alt="Rueda de prensa">
+    </section>
+
+    <section class="texto-detalle">
+        <h3>Un futuro prometedor</h3>
+        <p>
+            El director del Festival ha expresado su gratitud hacia el público donostiarra: "Sin ellos, este crecimiento no sería posible. Los 181.000 asistentes son la prueba de que el cine sigue siendo una experiencia compartida necesaria". La organización ya trabaja en la próxima edición con el reto de mantener estos niveles de excelencia.
+        </p>
+    </section>
+
+</main>
+
+<footer class="footer-gen">
+    <div class="footer-cont">
+        <div class="footer-col-1">
+            <img src="imgs/PNGBLANCO.png" class="logo-img">
+            <p>© Festival de San Sebastián</p>
+        </div>
+        <div class="footer-col-2">
+            <h4>- Suscríbete a nuestro newsletter -</h4>
+            <div class="newsletter">
+                <input type="email" placeholder="Correo electrónico">
+                <button>Enviar</button>
+            </div>
+        </div>
+        <div class="footer-col-3">
+            <address>
+                497 Evergreen Rd. Roseville, CA 95673<br>
+                +44 345 678 903<br>
+                adobeixd@gmail.com
+            </address>
+        </div>
+    </div>
+</footer>
+
+<button id="btnTop" title="Volver arriba">↑</button>
+
+<script>
+    const btnTop = document.getElementById("btnTop");
+    window.onscroll = function() {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            btnTop.style.display = "block";
+        } else {
+            btnTop.style.display = "none";
+        }
+    };
+    btnTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+</script>
+
+</body>
+</html>

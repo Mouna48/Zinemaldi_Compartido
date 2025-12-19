@@ -8,26 +8,74 @@
 </head>
 <body>
 <header>
-<nav>
-    <a href="index.html">
-        <img src="imgs/logozineV.svg" alt="Logo Festival San Sebastián"/>
-    </a>
+    <nav>
+		<!-- Logo -->
+            <a href="index.html">
+                <img src="imgs/logozineV.svg" alt="Logo Festival San Sebastián">
+            </a>
+		<!-- Contenedor Principal: Usa justify-content: space-between; -->
     <div class="contmenu">
+        
+        <!-- Grupo Izquierda: Logo + Menú + Idiomas (Corresponde a tu .menu1 original, pero reorganizado) -->
         <div class="menu1">
+            
+            
+
+            <!-- Agrupación de Enlaces de Navegación (NOTICIAS, EMISIONES, etc.) -->
             <div class="nav-links">
                 <a href="Noticias.html">Noticias</a>
                 <a href="emisiones.html">Emisiones</a>
                 <a href="galeria.html">Galería</a>
                 <a href="contacto.html">Contacto</a>
             </div>
+            
+            <!-- Idiomas -->
             <div class="lang-links">
-                <a href="#">ES</a>
-                <a href="#">EU</a>
-                <a href="#">EN</a>
+                 <a href="#">ES</a>
+                 <a href="#">EU</a>
+                 <a href="#">EN</a>
             </div>
+
+        </div>
+        
+        <div class="menu2">
+            
+            <!-- Redes sociales -->
+            <div class="social-icons">
+                <!-- Icono Instagram -->
+                <a href="https://www.instagram.com/sansebastianfes/" title="Instagram">
+                    <img src="imgs/Trazado3.png" alt="insta"></a>
+                <!-- Icono Twitter -->
+                <a href="https://twitter.com/sansebastianfes" title="Twitter">
+                    <img src="imgs/Trazado2.png" alt="twitter">
+                </a>
+                <!-- Icono Facebook -->
+                <a href="https://www.facebook.com/sansebastianfestival" title="Facebook">
+                    <img src="imgs/Trazado1.png" alt="fb">
+                </a>
+            </div>
+
+            <!-- Barra de Búsqueda -->
+            <div class="search-container">
+                <input type="text" placeholder="">
+                <!-- Icono Buscar -->
+                <div class="search-icon">
+                    <a href="#" class="icono-buscar" title="Buscar">
+                        <img src="imgs/Trazado-1.png" alt="buscar"/>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Icono Perfil (con la ruta SRC original) -->
+            <div class="pictos ml-4"> 
+                <a href="InicioSesion.html" class="icono-perfil" title="Perfil">
+                    <img src="imgs/User.png" alt="user"/>
+                </a>
+            </div>
+            
         </div>
     </div>
-</nav>
+    </nav>
 </header>
 
 <div class="linea-separadora"></div>
@@ -68,7 +116,7 @@
     <article class="noticia">
         <img src="imgs/asistente2.jpg" alt="asistentes - San Sebastián 2025" class="foto-noticia">
         <div class="contenido-noticia">
-            <h2><strong>El Festival de San Sebastián sigue creciendo en asistentes (181.000) y supera por cuarto año consecutivo el récord de personas acreditadas (5.500)</strong></h2>
+            <h2>El Festival de San Sebastián sigue creciendo en asistentes (181.000) y supera por cuarto año consecutivo el récord de personas acreditadas (5.500)</h2>
             <p>Un total de 181.183 espectadoras y espectadores asistieron a las 666 proyecciones de 254 títulos procedentes de 56 países de la 73ª edición del Festival de San Sebastián, lo cual supone un incremento de público del 5,15 % con respecto a las 172.301 personas registradas en 2024.</p>
             <p class="fecha">📅 Publicado: septiembre de 2025</p>
         </div>
@@ -116,7 +164,7 @@ document.addEventListener("DOMContentLoaded", function () {
             window.location.href = "noticia-domingos.html";
         });
         noticias[1].addEventListener("click", function () {
-            window.location.href = "noticia-premio-especial.html"; // <-- aquí se conecta correctamente
+            window.location.href = "noticia-premio-especial.html"; 
         });
         noticias[2].addEventListener("click", function () {
             window.location.href = "noticia-invitados.html";
@@ -131,6 +179,28 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 </script>
+<button id="btnTop" aria-label="Volver arriba">↑</button>
+<script>
+const btnTop = document.getElementById("btnTop");
+
+window.onscroll = function() {
+    // Detectamos si el scroll baja más de 300px
+    if (window.scrollY > 300 || document.documentElement.scrollTop > 300) {
+        btnTop.style.display = "block";
+    } else {
+        btnTop.style.display = "none";
+    }
+};
+
+// Función para volver arriba con suavidad
+btnTop.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+</script>
+
 
 </body>
 </html>

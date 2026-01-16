@@ -525,29 +525,31 @@ nav ul li a:hover {
     }
     .card-h .img-box { order: 0; }
 }
-
-/* Evita que el estilo de las tarjetas nuevas afecte a la sección de Premiados */
-#premiadoas {
-    display: block;
-    text-align: center;
+/* Sección premiados y premiadas */
+/* Fuente y visualización base */
+.mi-card-premiadoas {
+    font-family: Arial, sans-serif;
+    border-bottom-right-radius: 88px !important; /* Radio reducido para móvil */
+    overflow: hidden;
 }
 
-#premiadoas div {
-    display: inline-block;
-    vertical-align: top;
-    width: 300px; /* Tamaño fijo para las fotos de abajo */
-    margin: 15px;
+/* Para que el fondo negro suba un poco sobre la foto y sea más largo */
+.mi-card-premiadoas .card-body {
+    margin-top: -30px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    position: relative;
 }
 
-/* Recupera la línea decorativa solo para el título de Premiados */
-#premiadoas h1::after {
-    content: "";
-    display: block;
-    width: 80px;
-    height: 3px;
-    background-color: #3b3b3b;
-    margin: 12px auto 0;
-    border-radius: 2px;
+/* Efectos Responsive para pantallas grandes (PC) */
+@media (min-width: 768px) {
+    .mi-card-premiadoas {
+        border-bottom-right-radius: 80px !important; /* Radio grande en PC */
+    }
+    
+    .mi-card-premiadoas .card-body {
+        margin-top: -50px; /* Sube más en pantallas grandes */
+    }
 }
 
 /* Footer */

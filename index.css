@@ -1,4 +1,4 @@
-:root {
+ :root {
             --header-bg: #ffffff;
             --footer-bg: #222; 
             --primary: #161616; 
@@ -25,7 +25,7 @@ header {
     z-index: 1000;
     backdrop-filter: blur(6px);
     border-bottom: 1px solid #ddd;
-    padding: 8px 25px;   /* 🔹 más fino que el original */
+    padding: 8px 25px;   
     transition: all 0.3s ease;
     box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
@@ -153,6 +153,285 @@ header {
             color: #6e6e6e;
         }
 
+        /* Tablets y pantallas medianas */
+@media (max-width: 992px) {
+    header {
+        padding: 10px 20px;
+    }
+
+    nav img {
+        width: 65px; /* Logo un poco más pequeño */
+    }
+
+    .contmenu {
+        justify-content: space-between;
+        gap: 10px;
+        flex-wrap: wrap; /* Permite que los elementos bajen si no caben */
+    }
+
+    .menu1, .menu2 {
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+        padding: 4px 6px;
+    }
+
+    .lang-links {
+        gap: 6px;
+    }
+
+    .contmenu img {
+        height: 18px;
+    }
+
+    .search-container input {
+        width: 100px;
+    }
+}
+
+/* Móviles */
+@media (max-width: 600px) {
+    nav img {
+        width: 50px;
+    }
+
+    .contmenu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .menu1, .menu2 {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+        padding: 3px 5px;
+    }
+
+    .lang-links {
+        gap: 4px;
+    }
+
+    .search-container {
+        height: 26px;
+        margin-right: 5px;
+    }
+
+    .search-container input {
+        width: 80px;
+    }
+
+    .contmenu img {
+        height: 15px;
+    }
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+nav img {
+    width: 80px;
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+nav ul li a svg {
+    vertical-align: middle;
+    transition: transform 0.3s, color 0.3s;
+}
+
+nav ul li a:hover svg {
+    transform: scale(1.2);
+    color: var(--primary);
+}
+
+nav ul li a:hover {
+    background: rgba(0,0,0,0.05);
+}
+
+header h1 {
+    margin-top: 10px;
+    font-size: 2rem;
+    color: var(--primary);
+    text-align: left;
+    transition: color 0.3s;
+}
+
+h1 {
+  font-family: "Bahnschrift", "Segoe UI", sans-serif;
+  font-weight: 700;      
+  font-style: normal;
+  font-size: 2.4rem;             
+  letter-spacing: 2px;          
+  color: #222;     
+  text-align: center;
+  margin: 40px 0 25px;         
+  line-height: 1.2;
+  position: relative;
+}
+
+h1::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #3b3b3b;   
+  margin: 12px auto 0;
+  border-radius: 2px;
+  opacity: 0.85;
+}
+
+/* Para el carrusel 1 */
+
+/* --- ESTILOS DE CARRUSEL CON JS PURO (para index.css) --- */
+
+.banner-carrusel {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.carrusel-slide {
+    position: relative;
+    width: 100%; 
+    height: 500px; /* Ajusta esta altura a tu gusto */
+    overflow: hidden; 
+}
+
+.carrusel-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carrusel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Animación y ocultación inicial */
+    transition: opacity 0.6s ease-in-out;
+    opacity: 0; /* Oculta todos los items por defecto */
+    z-index: 1;
+}
+
+.carrusel-item.active {
+    opacity: 1; /* Muestra solo el item activo */
+    z-index: 2; 
+}
+
+/* Estilo de las imágenes */
+.carrusel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Controles de navegación (flechas) */
+.carrusel-control-prev,
+.carrusel-control-next {
+    position: absolute;
+    top: 50%;
+    z-index: 3;
+    cursor: pointer;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5); 
+    border: none;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+    border-radius: 50%; 
+}
+
+.carrusel-control-prev { left: 10px; }
+.carrusel-control-next { right: 10px; }
+
+/* Estilo de tus imágenes PNG dentro de los botones */
+.icono-control {
+    width: 25px; 
+    height: 25px; 
+}
+
+/* Ocultar el texto de ayuda si está presente */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+
+/* Indicadores (puntos de abajo) */
+.carrusel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    gap: 8px;
+}
+
+.carrusel-indicators button {
+    width: 30px;
+    height: 3px;
+    margin: 0 2px;
+    background-color: #fff;
+    border: 0;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.carrusel-indicators button.active {
+    opacity: 1;
+    background-color: #f0f0f0;
+}
+
+/* Asegúrate de que este bloque se mantenga para la compatibilidad de iconos */
+/* Aunque ya no debería ser necesario si usas el HTML de arriba */
+.carousel-control-prev span,
+.carousel-control-next span {
+    display: none;
+}
+
+/*Estilos del Carrusel 2*/
 
 nav {
     display: flex;
@@ -401,29 +680,31 @@ nav ul li a:hover {
     }
     .card-h .img-box { order: 0; }
 }
-
-/* Evita que el estilo de las tarjetas nuevas afecte a la sección de Premiados */
-#premiadoas {
-    display: block;
-    text-align: center;
+/* Sección premiados y premiadas */
+/* Fuente y visualización base */
+.mi-card-premiadoas {
+    font-family: Arial, sans-serif;
+    border-bottom-right-radius: 88px !important; /* Radio reducido para móvil */
+    overflow: hidden;
 }
 
-#premiadoas div {
-    display: inline-block;
-    vertical-align: top;
-    width: 300px; /* Tamaño fijo para las fotos de abajo */
-    margin: 15px;
+/* Para que el fondo negro suba un poco sobre la foto y sea más largo */
+.mi-card-premiadoas .card-body {
+    margin-top: -30px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    position: relative;
 }
 
-/* Recupera la línea decorativa solo para el título de Premiados */
-#premiadoas h1::after {
-    content: "";
-    display: block;
-    width: 80px;
-    height: 3px;
-    background-color: #3b3b3b;
-    margin: 12px auto 0;
-    border-radius: 2px;
+/* Efectos Responsive para pantallas grandes (PC) */
+@media (min-width: 768px) {
+    .mi-card-premiadoas {
+        border-bottom-right-radius: 80px !important; /* Radio grande en PC */
+    }
+    
+    .mi-card-premiadoas .card-body {
+        margin-top: -50px; /* Sube más en pantallas grandes */
+    }
 }
 
 /* Footer */

@@ -25,7 +25,7 @@ header {
     z-index: 1000;
     backdrop-filter: blur(6px);
     border-bottom: 1px solid #ddd;
-    padding: 8px 25px;   /* 🔹 más fino que el original */
+    padding: 8px 25px;   
     transition: all 0.3s ease;
     box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }

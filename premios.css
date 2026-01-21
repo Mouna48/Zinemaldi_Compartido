@@ -8,7 +8,6 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* ❌ إزالة أي خط أو pseudo-element موروث */
 .detalle-texto h1,
 .detalle-texto h1::after,
 .detalle-texto h1::before {

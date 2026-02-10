@@ -103,50 +103,8 @@
         </div>
     </footer>
 </div>
+    <button id="btnTop" aria-label="Volver arriba">↑</button>
 
-<script>
-    const formulario = document.getElementById('formContacto');
-
-    formulario.addEventListener('submit', function(event) {
-        // Evitamos que el formulario se envíe a un PHP de verdad para probar el localStorage
-        event.preventDefault();
-
-        // Obtenemos los valores de los campos
-        let email = document.getElementById("correo").value;
-        let mensaje = document.getElementById("mensj").value;
-
-        // Guardamos en LocalStorage
-        localStorage.setItem("emailGuardado", email);
-        localStorage.setItem("mensajeGuardado", mensaje);
-
-        alert("¡Datos guardados con éxito!!");
-        
-        // Opcional: limpiar el formulario después de guardar
-        formulario.reset();
-    });
-</script>
-<button id="btnTop" aria-label="Volver arriba">↑</button>
-<script>
-const btnTop = document.getElementById("btnTop");
-
-window.onscroll = function() {
-    // Detectamos si el scroll baja más de 300px
-    if (window.scrollY > 300 || document.documentElement.scrollTop > 300) {
-        btnTop.style.display = "block";
-    } else {
-        btnTop.style.display = "none";
-    }
-};
-
-// Función para volver arriba con suavidad
-btnTop.addEventListener("click", () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-</script>
-
-
+<script src="index.js"></script>
 </body>
 </html>

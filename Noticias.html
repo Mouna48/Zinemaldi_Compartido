@@ -148,54 +148,11 @@
 </footer>
 </div>
 
-<!-- JavaScript para hacer clic en las noticias -->
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const noticias = document.querySelectorAll(".noticia");
 
-    // Conectar cada noticia a su página
-    if (noticias.length >= 4) {
-        noticias[0].addEventListener("click", function () {
-            window.location.href = "noticia-domingos.html";
-        });
-        noticias[1].addEventListener("click", function () {
-            window.location.href = "noticia-premio-especial.html"; 
-        });
-        noticias[2].addEventListener("click", function () {
-            window.location.href = "noticia-invitados.html";
-        });
-        noticias[3].addEventListener("click", function () {
-            window.location.href = "noticia-asistentes.html";
-        });
-    }
+  <button id="btnTop" aria-label="Volver arriba">↑</button>
 
-    noticias.forEach(noticia => {
-        noticia.style.cursor = "pointer";
-    });
-});
-</script>
-<button id="btnTop" aria-label="Volver arriba">↑</button>
-<script>
-const btnTop = document.getElementById("btnTop");
 
-window.onscroll = function() {
-    // Detectamos si el scroll baja más de 300px
-    if (window.scrollY > 300 || document.documentElement.scrollTop > 300) {
-        btnTop.style.display = "block";
-    } else {
-        btnTop.style.display = "none";
-    }
-};
-
-// Función para volver arriba con suavidad
-btnTop.addEventListener("click", () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-</script>
-
+<script src="index.js"></script>
 
 </body>
 </html>

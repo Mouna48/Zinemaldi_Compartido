@@ -504,3 +504,29 @@ h1::after {
     background-color: #555;
     transform: scale(1.1); /* Efecto visual al pasar el ratón */
 }
+/* Estilo del Botón de Base de Datos */
+.contenedor-db {
+    display: flex;       /* Activa el modo flexible */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente (si el div tiene altura) */
+    width: 100%;         /* Asegura que ocupe todo el ancho de la página */
+    padding: 40px 0;    /* Espacio arriba y abajo para que no esté pegado a otros elementos */
+    margin: 0 auto;
+}
+
+.btn-database {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #000000;
+    color: white !important;
+    text-decoration: none !important;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-database:hover {
+    background-color: #7f7f7f;
+    transform: translateY(-3px);
+}

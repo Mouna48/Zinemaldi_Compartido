@@ -121,46 +121,7 @@
 
     <button id="btnTop" aria-label="Volver arriba">↑</button>
 
-    <div id="lightbox" class="lightbox">
-        <span class="close-btn">&times;</span>
-        <img class="lightbox-content" id="lightbox-img">
-    </div>
 
-    <script>
-    const btnTop = document.getElementById("btnTop");
-    window.onscroll = function() {
-        if (window.scrollY > 300 || document.documentElement.scrollTop > 300) {
-            btnTop.style.display = "block";
-        } else {
-            btnTop.style.display = "none";
-        }
-    };
-    btnTop.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightbox-img");
-    const closeBtn = document.querySelector(".close-btn");
-    const galleryImages = document.querySelectorAll(".galeria img");
-
-    galleryImages.forEach(img => {
-        img.addEventListener("click", () => {
-            lightbox.style.display = "flex"; 
-            lightboxImg.src = img.src; 
-        });
-    });
-
-    closeBtn.addEventListener("click", () => {
-        lightbox.style.display = "none";
-    });
-
-    lightbox.addEventListener("click", (e) => {
-        if (e.target !== lightboxImg) {
-            lightbox.style.display = "none";
-        }
-    });
-    </script>
+<script src="index.js"></script>
 </body>
 </html>

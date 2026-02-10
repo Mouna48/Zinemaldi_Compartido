@@ -133,44 +133,7 @@
 
 <button id="btnTop" title="Volver arriba">↑</button>
 
-<script>
-const btnTop = document.getElementById("btnTop");
-
-// Detecta el movimiento del scroll
-window.onscroll = function() {
-    // Si el usuario baja más de 200px, muestra el botón. Si no, lo oculta.
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        btnTop.style.display = "block";
-    } else {
-        btnTop.style.display = "none";
-    }
-};
-
-// Al hacer clic, sube suavemente hasta la posición 0 (arriba del todo)
-btnTop.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-</script>
-
-<script>
-// Selecciona todos los elementos con la clase "fade-in"
-const faders = document.querySelectorAll(".fade-in");
-
-// Configura el observador para detectar cuándo el elemento aparece en pantalla
-const appearOnScroll = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        // Si el elemento entra en el campo visual del usuario (umbral 0.3)
-        if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-        }
-    });
-}, { threshold: 0.3 }); // Se activa cuando el 30% del elemento es visible
-
-// Aplica el observador a cada elemento seleccionado
-faders.forEach(fader => {
-    appearOnScroll.observe(fader);
-});
-</script>
+<script src="index.js"></script>
 
 </body>
 </html>

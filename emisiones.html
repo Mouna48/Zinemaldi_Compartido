@@ -76,6 +76,11 @@
     </div>
     </nav>
 </header>
+<div class="contenedor-db">
+    <a href="http://localhost:8080" target="_blank" class="btn-database">
+        <span class="icon">📊</span> Películas disponibles
+    </a>
+</div>
 <div><h1>Emisiones</h1></div>
     <main>
         <div class="caja">
@@ -311,27 +316,9 @@
             </div>
   </footer>
     </div>
-    <button id="btnTop" aria-label="Volver arriba">↑</button>
-<script>
-const btnTop = document.getElementById("btnTop");
+  <button id="btnTop" aria-label="Volver arriba">↑</button>
 
-window.onscroll = function() {
-    // Detectamos si el scroll baja más de 300px
-    if (window.scrollY > 300 || document.documentElement.scrollTop > 300) {
-        btnTop.style.display = "block";
-    } else {
-        btnTop.style.display = "none";
-    }
-};
 
-// Función para volver arriba con suavidad
-btnTop.addEventListener("click", () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-</script>
-
+<script src="index.js"></script>
 </body>
 </html>

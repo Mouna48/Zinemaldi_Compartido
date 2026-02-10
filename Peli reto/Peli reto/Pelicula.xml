@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<peliculas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="peliculas.xsd">
+
+    <pelicula>
+        <IDPelicula>1</IDPelicula>
+        <Titulo>Los domingos</Titulo>
+        <Sinopsis>Una historia sobre la vida dominical de una familia española.</Sinopsis>
+        <Director>Alauda Ruiz de Azúa</Director>
+        <Duracion>115</Duracion>
+        <Genero>Drama</Genero>
+        <AñoLanzamiento>2025</AñoLanzamiento>
+        <Pais>España</Pais>
+    </pelicula>
+    <pelicula>
+        <IDPelicula>2</IDPelicula>
+        <Titulo>Los Tigres</Titulo>
+        <Sinopsis>Thriller criminal ambientado en España.</Sinopsis>
+        <Director>Alberto Rodríguez</Director>
+        <Duracion>120</Duracion>
+        <Genero>Thriller</Genero>
+        <AñoLanzamiento>2025</AñoLanzamiento>
+        <Pais>España</Pais>
+    </pelicula>
+    <pelicula>
+        <IDPelicula>3</IDPelicula>
+        <Titulo>Maspalomas</Titulo>
+        <Sinopsis>Drama que narra la vida de un pequeño pueblo en Canarias.</Sinopsis>
+        <Director>Jose Mari Goenaga</Director>
+        <Duracion>105</Duracion>
+        <Genero>Drama</Genero>
+        <AñoLanzamiento>2025</AñoLanzamiento>
+        <Pais>España</Pais>
+    </pelicula>
+    <pelicula>
+        <IDPelicula>4</IDPelicula>
+        <Titulo>Historias del buen valle</Titulo>
+        <Sinopsis>Documental sobre las costumbres y tradiciones del Valle.</Sinopsis>
+        <Director>José Luis Guerín</Director>
+        <Duracion>130</Duracion>
+        <Genero>Documental</Genero>
+        <AñoLanzamiento>2025</AñoLanzamiento>
+        <Pais>España</Pais>
+    </pelicula>
+
+    <pelicula>
+        <IDPelicula>5</IDPelicula>
+        <Titulo>Nuremberg</Titulo>
+        <Sinopsis>Película histórica sobre los juicios de Nuremberg.</Sinopsis>
+        <Director>James Vanderbilt</Director>
+        <Duracion>138</Duracion>
+        <Genero>Histórico</Genero>
+        <AñoLanzamiento>2025</AñoLanzamiento>
+        <Pais>Estados Unidos</Pais>
+    </pelicula>
+
+    <pelicula>
+        <IDPelicula>6</IDPelicula>
+        <Titulo>La Cri des Gardes</Titulo>
+        <Sinopsis>Drama francés sobre conflictos familiares.</Sinopsis>
+        <Director>Claire Denis</Director>
+        <Duracion>112</Duracion>
+        <Genero>Drama</Genero>
+        <AñoLanzamiento>2025</AñoLanzamiento>
+        <Pais>Francia</Pais>
+    </pelicula>
+
+</peliculas>

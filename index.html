@@ -67,6 +67,7 @@
                     </a>
                 </div>
             </div>
+            
 
             <!-- Icono Perfil (con la ruta SRC original) -->
             <div class="pictos ml-4"> 
@@ -228,31 +229,10 @@
             </div>
   </footer>
     </div>
-<button id="btnTop" aria-label="Volver arriba">↑</button>
-<script>
+  <button id="btnTop" aria-label="Volver arriba">↑</button>
 
-
-    
-const btnTop = document.getElementById("btnTop");
-
-window.onscroll = function() {
-    // Detectamos si el scroll baja más de 300px
-    if (window.scrollY > 300 || document.documentElement.scrollTop > 300) {
-        btnTop.style.display = "block";
-    } else {
-        btnTop.style.display = "none";
-    }
-};
-
-// Función para volver arriba con suavidad
-btnTop.addEventListener("click", () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-</script>
 
 <script src="index.js"></script>
+
 </body>
 </html>

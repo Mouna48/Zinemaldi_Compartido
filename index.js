@@ -61,9 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-
     // 4. GALERÍA 
- 
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
     const galleryImages = document.querySelectorAll(".galeria img");
@@ -116,29 +114,50 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-    // 7. FORMULARIO DE CONTACTO (LocalStorage)
+
+    // 7. FORMULARIO DE CONTACTO (VALIDACIÓN EXTERNA EXIGIDA)
+    // Este bloque cumple con los requisitos de validación de campos obligatorios,
+    // formato de email, longitud de caracteres e impide el envío si hay errores.
     const formulario = document.getElementById('formContacto');
     if (formulario) {
         formulario.addEventListener('submit', function(event) {
-            event.preventDefault();
-            const email = document.getElementById("correo").value;
-            const mensaje = document.getElementById("mensj").value;
+            const emailInput = document.getElementById("correo");
+            const mensajeInput = document.getElementById("mensj");
+            
+            let errores = [];
 
-            localStorage.setItem("emailGuardado", email);
-            localStorage.setItem("mensajeGuardado", mensaje);
+            // Validación del formato de Email (Campos obligatorios y formato)
+            if (emailInput.value.trim() === "") {
+                errores.push("El campo correo es obligatorio.");
+            } else if (!emailInput.value.includes("@")) {
+                errores.push("El formato del correo no es válido (debe contener '@').");
+            }
 
-            alert("¡Datos guardados con éxito!!");
-            formulario.reset();
+            // Validación de longitud del mensaje (Longitudes mínimas)
+            if (mensajeInput.value.trim() === "") {
+                errores.push("El mensaje no puede estar vacío.");
+            } else if (mensajeInput.value.trim().length < 10) {
+                errores.push("El mensaje debe ser más descriptivo (mínimo 10 caracteres).");
+            }
+
+            // Gestión de errores e impedimento de envío (PreventDefault)
+            if (errores.length > 0) {
+                event.preventDefault(); // Detiene el envío del formulario
+                alert("⚠️ ERRORES EN EL FORMULARIO:\n\n" + errores.join("\n"));
+            } else {
+                // Si no hay errores, se procede con la lógica de negocio
+                localStorage.setItem("emailGuardado", emailInput.value);
+                localStorage.setItem("mensajeGuardado", mensajeInput.value);
+                alert("✅ Formulario validado correctamente. ¡Datos guardados!");
+            }
         });
     }
-});
-// ==========================================
-    // LÓGICA BOTÓN BASE DE DATOS (DOCKER)
-    // ==========================================
+
+    // 8. LÓGICA BOTÓN BASE DE DATOS (DOCKER)
     const btnDB = document.querySelector('.btn-database');
     if (btnDB) {
         btnDB.addEventListener('click', (e) => {
-            // Un pequeño aviso en consola para saber que el enlace funciona
-            console.log("Intentando conectar con el servidor Docker en el puerto 8080...");
+            console.log("Intentando conectar con el servidor Docker...");
         });
     }
+});

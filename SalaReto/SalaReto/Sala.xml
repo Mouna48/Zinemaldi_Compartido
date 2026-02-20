@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Salas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="Sala.xsd">
+    <Sala>
+        <Nombre>Kursaal 1</Nombre>
+        <Capacidad>1800</Capacidad>
+    </Sala>
+    <Sala>
+        <Nombre>Kursaal 2</Nombre>
+        <Capacidad>600</Capacidad>
+    </Sala>
+    <Sala>
+        <Nombre>Teatro Victoria Eugenia</Nombre>
+        <Capacidad>900</Capacidad>
+    </Sala>
+    <Sala>
+        <Nombre>Sala Principal ABC</Nombre>
+        <Capacidad>500</Capacidad>
+    </Sala>
+    <Sala>
+        <Nombre>Sala Experimental XYZ</Nombre>
+        <Capacidad>250</Capacidad>
+    </Sala>
+</Salas>

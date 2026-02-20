@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <!-- Elemento raíz -->
+    <xs:element name="Salas">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- Una o más salas -->
+                <xs:element name="Sala" maxOccurs="unbounded" minOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <!-- Nombre obligatorio de tipo string -->
+                            <xs:element name="Nombre" type="xs:string" />
+                            <!-- Capacidad obligatoria de tipo entero -->
+                            <xs:element name="Capacidad" type="xs:int" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

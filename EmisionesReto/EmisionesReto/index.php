@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peliculas Destacadas - Exportación</title>
+    <title>Emisiones de Cine - Exportación</title>
     <style>
         body { 
             font-family: "Arial", sans-serif; 
@@ -15,7 +15,6 @@
         .header-section {
             text-align: center;
             padding: 40px 20px;
-
         }
 
         h1 { 
@@ -49,15 +48,6 @@
             box-shadow: 0 8px 25px rgba(0,0,0,0.3);
         }
 
-        .btn-exportar:active {
-            transform: translateY(-1px);
-        }
-
-        .btn-exportar span {
-            font-size: 20px;
-        }
-
-        /* Contenedor de mensajes de estado */
         .status-box {
             max-width: 800px;
             margin: 20px auto;
@@ -73,92 +63,89 @@
             text-align: center; 
             color: #888; 
             margin-top: 50px;
-            font-family: "Arial", sans-serif; 
-        
         }
 
         hr { border: 0; border-top: 1px solid #ddd; margin: 40px 0; }
-    
         table { margin-top: 20px !important; }
     </style>
 </head>
 <body>
 
 <div class="header-section">
-    <h1>Exportar Base de Datos a XML</h1>
+    <h1>Exportar Emisiones a XML</h1>
     <form method="post">
         <button type="submit" name="exportar" class="btn-exportar">
-           GENERAR LISTADO DE PELÍCULAS
+           GENERAR LISTADO DE EMISIONES
         </button>
     </form>
 </div>
 
 <?php
+// index.php completo para exportar Emisiones a XML y transformarlo con XSLT
+
 if (isset($_POST['exportar'])) {
 
-    // 1. Conexión a MySQL
-
-$conexion = new mysqli("db_peli", "root", "1DAW3_BBDD", "CineDB");
-
+    // 1. Conexión a MySQL en Docker
+    $conexion = new mysqli("db_emisiones", "root", "1DAW3_BBDD", "CineDB");
     if ($conexion->connect_error) {
-        echo "<div class='status-box' style='border-color: red;'>";
-        die("<p style='color:red'><strong>Error de conexión:</strong> " . $conexion->connect_error . "</p></div>");
+        die("<div style='color:red; margin:20px;'><strong>Error de conexión:</strong> " . $conexion->connect_error . "</div>");
     }
 
-    $resultado = $conexion->query("SELECT * FROM Pelicula");
-
+    // 2. Consulta a la tabla Emision
+    $resultado = $conexion->query("SELECT * FROM Emision");
     if (!$resultado) {
-        echo "<div class='status-box' style='border-color: red;'>";
-        die("<p style='color:red'><strong>Error en la consulta:</strong> " . $conexion->error . "</p></div>");
+        die("<div style='color:red; margin:20px;'><strong>Error en la consulta:</strong> " . $conexion->error . "</div>");
     }
 
-    // 2. Crear XML
-    $xml = new SimpleXMLElement('<peliculas/>');
+    // 3. Crear XML
+ $xml = new SimpleXMLElement('<Emisiones/>'); 
 
     while ($fila = $resultado->fetch_assoc()) {
-        $pelicula = $xml->addChild('pelicula');
-        $pelicula->addChild('IDPelicula', $fila['IDPelicula']);
-        $pelicula->addChild('Titulo', $fila['Titulo']);
-        $pelicula->addChild('Sinopsis', $fila['Sinopsis']);
-        $pelicula->addChild('Director', $fila['Director']);
-        $pelicula->addChild('Duracion', $fila['Duracion']);
-        $pelicula->addChild('Genero', $fila['Genero']);
-        $pelicula->addChild('AñoLanzamiento', $fila['AnioLanzamiento']);
-        $pelicula->addChild('Pais', $fila['Pais']);
+        $emision = $xml->addChild('Emision');
+        // IMPORTANTE: El orden de addChild debe coincidir con el orden del xs:sequence en el XSD
+        // Si en el XSD quitaste IDEmision, comenta la siguiente línea:
+        // $emision->addChild('IDEmision', $fila['IDEmision']); 
+        
+        $emision->addChild('Fecha', $fila['Fecha']);    // Debe ser YYYY-MM-DD
+        $emision->addChild('Hora', $fila['Hora']);      // Debe ser HH:MM:SS
+        $emision->addChild('IDPelicula', $fila['IDPelicula']);
+        $emision->addChild('IDSala', $fila['IDSala']);
     }
 
-    // 3. Validar con XSD y mostrar estado
     $dom = new DOMDocument();
+    $dom->preserveWhiteSpace = false;
+    $dom->formatOutput = true;
     $dom->loadXML($xml->asXML());
 
+    // 4. Validación XSD (asegúrate de que el nombre del archivo coincida en mayúsculas/minúsculas)
     echo "<div class='status-box'>";
-    echo "<strong>Estado de la exportación:</strong><br>";
-    if ($dom->schemaValidate("peliculas.xsd")) {
-        echo "<span style='color:green'>✔ XML generado y válido según XSD</span>";
+    if (file_exists("Emisiones.xsd")) { // Ojo con la E mayúscula
+        if ($dom->schemaValidate("Emisiones.xsd")) {
+            echo "<span style='color:green; font-weight:bold;'>✔ XML generado y válido según XSD</span>";
+        } else {
+            echo "<span style='color:red; font-weight:bold;'>✖ Error de validación: Revisa el orden de los campos.</span>";
+        }
     } else {
-        echo "<span style='color:red'>✖ XML generado pero NO es válido según XSD</span>";
+        echo "<span style='color:orange; font-weight:bold;'>⚠ No se encontró emisiones.xsd</span>";
     }
     echo "</div>";
 
-    // 4. Transformar con XSLT y mostrar la tabla 
+    // 5. Transformar con XSLT
     $xslDoc = new DOMDocument();
-    if ($xslDoc->load("peliculas.xslt")) {
+    if ($xslDoc->load("emisiones.xslt")) {
         $proc = new XSLTProcessor();
         $proc->importStylesheet($xslDoc);
-        
         echo "<hr/>";
-        // Aquí se imprime la tabla generada por el XSLT
         echo $proc->transformToXML($dom);
     } else {
-        echo "<div class='status-box' style='border-color: red;'>";
-        echo "<p style='color:red'>✖ Error: No se pudo cargar el archivo peliculas.xslt</p></div>";
+        echo "<div style='color:red; font-weight:bold;'>✖ No se pudo cargar emisiones.xslt</div>";
     }
 
     $conexion->close();
 
 } else {
-    // Esto se muestra antes de pulsar el botón
-    echo "<div class='mensaje-inicio'><p>El sistema está listo. Pulsa el botón superior para sincronizar con la base de datos.</p></div>";
+    // Mensaje inicial antes de procesar
+    echo "<div class='mensaje-inicio'><p>El sistema de emisiones está listo. Pulsa el botón para sincronizar.</p></div>";
 }
 ?>
 

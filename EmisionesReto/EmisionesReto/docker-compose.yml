@@ -1,21 +1,20 @@
 version: "3.8"
-
 services:
-  web_peli:
+  web_emisiones:
+    container_name: contenedor_web_emisiones
     build: .
-    container_name: contenedor_web_peli
     ports:
-      - "8080:80"
+      - "8082:80"
     volumes:
       - .:/var/www/html
     depends_on:
-      - db_peli
+      - db_emisiones
 
-  db_peli:
+  db_emisiones:
+    container_name: contenedor_db_emisiones
     image: mysql:8.0
-    container_name: contenedor_db_peli
     environment:
       MYSQL_ROOT_PASSWORD: 1DAW3_BBDD
       MYSQL_DATABASE: CineDB
     ports:
-      - "3307:3306"
+      - "3309:3306"

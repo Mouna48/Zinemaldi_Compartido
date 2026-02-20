@@ -1,19 +1,20 @@
 version: "3.8"
-
 services:
-  web:
+  web_sala:
+    container_name: contenedor_web_sala
     build: .
     ports:
-      - "8080:80"
+      - "8081:80"
     volumes:
       - .:/var/www/html
     depends_on:
-      - db
+      - db_sala
 
-  db:
+  db_sala: 
     image: mysql:8.0
+    container_name: contenedor_db_sala
     environment:
       MYSQL_ROOT_PASSWORD: 1DAW3_BBDD
       MYSQL_DATABASE: CineDB
     ports:
-      - "3307:3306"
+      - "3308:3306"

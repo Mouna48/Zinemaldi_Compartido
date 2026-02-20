@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Emisiones xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="Emisiones.xsd">
+
+    <Emision>
+        <Fecha>2025-09-20</Fecha>
+        <Hora>18:00:00</Hora>
+        <IDPelicula>1</IDPelicula>
+        <IDSala>1</IDSala>
+    </Emision>
+
+    <Emision>
+        <Fecha>2025-09-20</Fecha>
+        <Hora>21:30:00</Hora>
+        <IDPelicula>2</IDPelicula>
+        <IDSala>1</IDSala>
+    </Emision>
+
+    <Emision>
+        <Fecha>2025-09-21</Fecha>
+        <Hora>17:00:00</Hora>
+        <IDPelicula>3</IDPelicula>
+        <IDSala>2</IDSala>
+    </Emision>
+
+    <Emision>
+        <Fecha>2025-09-21</Fecha>
+        <Hora>20:00:00</Hora>
+        <IDPelicula>4</IDPelicula>
+        <IDSala>3</IDSala>
+    </Emision>
+
+    <Emision>
+        <Fecha>2025-09-22</Fecha>
+        <Hora>19:30:00</Hora>
+        <IDPelicula>5</IDPelicula>
+        <IDSala>1</IDSala>
+    </Emision>
+
+</Emisiones>

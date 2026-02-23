@@ -123,7 +123,9 @@ $conexion = new mysqli("db_peli", "root", "1DAW3_BBDD", "CineDB");
         $pelicula->addChild('Director', $fila['Director']);
         $pelicula->addChild('Duracion', $fila['Duracion']);
         $pelicula->addChild('Genero', $fila['Genero']);
-        $pelicula->addChild('AñoLanzamiento', $fila['AnioLanzamiento']);
+        if (!empty($fila['AnioLanzamiento'])) {
+    $pelicula->addChild('AñoLanzamiento', $fila['AnioLanzamiento']);
+}
         $pelicula->addChild('Pais', $fila['Pais']);
     }
 

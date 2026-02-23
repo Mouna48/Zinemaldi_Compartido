@@ -19,3 +19,5 @@ services:
       MYSQL_DATABASE: CineDB
     ports:
       - "3307:3306"
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d

@@ -1,11 +1,11 @@
-/* 
-   CRUD completo de Emisiones 
-/* CONFIGURACIÓN */
-const URL_BASE = "http://localhost:8055/items/emisiones";
-const TOKEN    = "tuTokenDeDirectus";   // ← pega aquí el token generado en Directus
+/*  CRUD completo de Emisiones contra la API REST de Directus.*/
+
+/*  CONFIGURACIÓN  */
+const URL_BASE = "http://localhost:8055/items/Emision";
+const TOKEN    = "z7Y7hBfQFS1ppqQbjQu4C_5Wvn8uocMx"; 
 
 
-/* REFERENCIAS AL DOM */
+/*  REFERENCIAS AL DOM */
 const formulario        = document.getElementById("form-emision");
 const tituloFormulario  = document.getElementById("titulo-formulario");
 const inputId           = document.getElementById("emision-id");
@@ -21,7 +21,7 @@ const estadoError       = document.getElementById("estado-error");
 const mensajeFormulario = document.getElementById("mensaje-formulario");
 
 
-/*  LISTAR (GET) */
+/*  LISTAR (GET)  */
 async function cargarEmisiones() {
 
     estadoCargando.classList.remove("oculto");
@@ -61,7 +61,7 @@ async function cargarEmisiones() {
 }
 
 
-/* PINTAR LAS TARJETAS */
+/*  PINTAR LAS TARJETAS */
 function pintarEmisiones(emisiones) {
     cajaListado.innerHTML = "";
 
@@ -70,14 +70,14 @@ function pintarEmisiones(emisiones) {
         card.className = "card-item";
 
         card.innerHTML = `
-            <h3>Emisión #${e.id}</h3>
-            <p><strong>Fecha:</strong> ${e.fecha || "-"}</p>
-            <p><strong>Hora:</strong> ${e.hora || "-"}</p>
-            <p><strong>ID Película:</strong> ${e.id_pelicula || "-"}</p>
-            <p><strong>ID Sala:</strong> ${e.id_sala || "-"}</p>
+            <h3>Emisión #${e.IDEmision}</h3>
+            <p><strong>Fecha:</strong> ${e.Fecha || "-"}</p>
+            <p><strong>Hora:</strong> ${e.Hora || "-"}</p>
+            <p><strong>ID Película:</strong> ${e.IDPelicula || "-"}</p>
+            <p><strong>ID Sala:</strong> ${e.IDSala || "-"}</p>
             <div class="acciones-card">
-                <button class="btn-editar" data-id="${e.id}">Editar</button>
-                <button class="btn-borrar" data-id="${e.id}">Borrar</button>
+                <button class="btn-editar" data-id="${e.IDEmision}">Editar</button>
+                <button class="btn-borrar" data-id="${e.IDEmision}">Borrar</button>
             </div>
         `;
 
@@ -103,11 +103,13 @@ formulario.addEventListener("submit", async (evento) => {
         return;
     }
 
+    /*  las claves del objeto deben coincidir EXACTAMENTE con los nombres
+       de las columnas en la base de datos, mayúsculas incluidas. */
     const datos = {
-        fecha:       inputFecha.value,
-        hora:        inputHora.value,
-        id_pelicula: parseInt(inputIdPelicula.value, 10),
-        id_sala:     parseInt(inputIdSala.value, 10)
+        Fecha:      inputFecha.value,
+        Hora:       inputHora.value,
+        IDPelicula: parseInt(inputIdPelicula.value, 10),
+        IDSala:     parseInt(inputIdSala.value, 10)
     };
 
     const idActual = inputId.value;
@@ -153,7 +155,7 @@ formulario.addEventListener("submit", async (evento) => {
 });
 
 
-/* PREPARAR EDICIÓN */
+/*  PREPARAR EDICIÓN  */
 async function prepararEdicion(id) {
     ocultarMensaje();
 
@@ -173,14 +175,14 @@ async function prepararEdicion(id) {
         const datos = await respuesta.json();
         const e = datos.data;
 
-        inputId.value          = e.id;
-        inputFecha.value       = e.fecha       || "";
+        inputId.value         = e.IDEmision;
+        inputFecha.value      = e.Fecha      || "";
         // Cortamos los segundos si Directus devuelve la hora como "18:00:00"
-        inputHora.value        = e.hora ? e.hora.substring(0, 5) : "";
-        inputIdPelicula.value  = e.id_pelicula || "";
-        inputIdSala.value      = e.id_sala     || "";
+        inputHora.value       = e.Hora ? e.Hora.substring(0, 5) : "";
+        inputIdPelicula.value = e.IDPelicula || "";
+        inputIdSala.value     = e.IDSala     || "";
 
-        tituloFormulario.textContent = "Editando emisión #" + e.id;
+        tituloFormulario.textContent = "Editando emisión #" + e.IDEmision;
         btnGuardar.textContent       = "Actualizar";
         btnCancelar.classList.remove("oculto");
 
@@ -195,7 +197,7 @@ async function prepararEdicion(id) {
 btnCancelar.addEventListener("click", resetearFormulario);
 
 
-/* BORRAR (DELETE)*/
+/*  BORRAR (DELETE) */
 async function borrarEmision(id) {
 
     if (!confirm("¿Seguro que quieres borrar esta emisión?")) return;
@@ -224,7 +226,7 @@ async function borrarEmision(id) {
 }
 
 
-/*  UTILIDADES */
+/*  9. UTILIDADES  */
 function resetearFormulario() {
     formulario.reset();
     inputId.value                = "";
@@ -244,5 +246,5 @@ function ocultarMensaje() {
 }
 
 
-/* ARRANCAR*/
+/* 10. ARRANQUE  */
 cargarEmisiones();

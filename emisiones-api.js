@@ -1,8 +1,8 @@
 /*  CRUD completo de Emisiones contra la API REST de Directus.*/
 
 /*  CONFIGURACIÓN  */
-const URL_BASE = "http://localhost:8055/items/Emision";
-const TOKEN    = "z7Y7hBfQFS1ppqQbjQu4C_5Wvn8uocMx"; 
+const URL_BASE = "http://localhost:8055/items/emision";
+const TOKEN    = "uos622sC0nh7KSaHtrFvTDetI__wl15z"; 
 
 
 /*  REFERENCIAS AL DOM */

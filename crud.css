@@ -1,0 +1,182 @@
+/* =========================================================================
+   crud.css
+   Estilos comunes para las tres páginas CRUD: peliculas, salas y emisiones.
+   Pendiente de personalización según el diseño final.
+   ========================================================================= */
+
+.crud-main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+}
+
+/* ---------- Cabeceras ---------- */
+.crud-main h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.crud-main h2 {
+    font-size: 1.4rem;
+    margin: 30px 0 15px 0;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.intro-seccion p {
+    color: #555;
+    line-height: 1.5;
+}
+
+/* ---------- Formulario ---------- */
+.formulario-seccion {
+    background: #f7f7f7;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.form-crud {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo label {
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+    color: #444;
+}
+
+.campo input {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.campo input:focus {
+    outline: none;
+    border-color: #888;
+}
+
+.botones-formulario {
+    grid-column: 1 / -1;       /* el grupo de botones ocupa las dos columnas */
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.botones-formulario button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-guardar  { background: #222;  color: #fff; }
+.btn-cancelar { background: #ddd;  color: #222; }
+
+.btn-guardar:hover  { background: #000; }
+.btn-cancelar:hover { background: #bbb; }
+
+/* ---------- Mensajes ---------- */
+.mensaje {
+    margin-top: 15px;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+
+.mensaje.ok    { background: #e6f5ea; color: #1e6b34; border: 1px solid #b6d9c2; }
+.mensaje.error { background: #fbe7e7; color: #8a1d1d; border: 1px solid #e2b0b0; }
+
+.estado {
+    padding: 15px;
+    color: #555;
+    font-style: italic;
+}
+
+.estado.error {
+    background: #fbe7e7;
+    color: #8a1d1d;
+    border: 1px solid #e2b0b0;
+    border-radius: 4px;
+    font-style: normal;
+}
+
+/* ---------- Listado de tarjetas ---------- */
+.grid-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.card-item {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 18px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+}
+
+.card-item h3 {
+    font-size: 1.15rem;
+    margin: 0 0 10px 0;
+    color: #222;
+}
+
+.card-item p {
+    margin: 4px 0;
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.acciones-card {
+    margin-top: auto;
+    padding-top: 12px;
+    display: flex;
+    gap: 8px;
+}
+
+.acciones-card button {
+    flex: 1;
+    padding: 7px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.btn-editar { background: #222;   color: #fff; }
+.btn-borrar { background: #a02525; color: #fff; }
+
+.btn-editar:hover { background: #000;    }
+.btn-borrar:hover { background: #7a1c1c; }
+
+/* ---------- Utilidad ---------- */
+.oculto { display: none !important; }
+
+/* Marca el enlace activo del menú */
+.nav-links a.activo {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 700px) {
+    .form-crud {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Películas - Festival de San Sebastián</title>
+    <link rel="icon" type="image/png" href="imgs/PNGnegrotxiki2.png">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="crud.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html">
+                <img src="imgs/logozineV.svg" alt="Logo Festival San Sebastián">
+            </a>
+            <div class="contmenu">
+                <div class="menu1">
+                    <div class="nav-links">
+                        <a href="Noticias.html" title="Noticias">Noticias</a>
+                        <a href="emisiones.html" title="Emisiones">Emisiones</a>
+                        <a href="peliculas.html" title="Películas" class="activo">Películas</a>
+                        <a href="salas.html" title="Salas">Salas</a>
+                        <a href="emisiones-admin.html" title="Gestión Emisiones">Gestión</a>
+                        <a href="galeria.html" title="Galería">Galería</a>
+                        <a href="contacto.html" title="Contacto">Contacto</a>
+                    </div>
+                    <div class="lang-links">
+                        <a href="#" title="Español">ES</a>
+                        <a href="#" title="Euskera">EU</a>
+                        <a href="#" title="Inglés">EN</a>
+                    </div>
+                </div>
+                <div class="menu2">
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/sansebastianfes/" title="Instagram">
+                            <img src="imgs/Trazado3.png" alt="insta"></a>
+                        <a href="https://twitter.com/sansebastianfes" title="Twitter">
+                            <img src="imgs/Trazado2.png" alt="twitter"></a>
+                        <a href="https://www.facebook.com/sansebastianfestival" title="Facebook">
+                            <img src="imgs/Trazado1.png" alt="fb"></a>
+                    </div>
+                    <div class="search-container">
+                        <input type="text" placeholder="">
+                        <div class="search-icon">
+                            <a href="#" class="icono-buscar" title="Buscar">
+                                <img src="imgs/Trazado-1.png" alt="buscar" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="pictos ml-4">
+                        <a href="InicioSesion.html" class="icono-perfil" title="Perfil">
+                            <img src="imgs/User.png" alt="user" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ================== CONTENIDO ================== -->
+    <main class="crud-main">
+
+        <section class="intro-seccion">
+            <h1>Gestión de Películas</h1>
+            <p>Listado de películas del Festival. Puedes crear, editar y eliminar registros conectados a la base de datos a través de la API de Directus.</p>
+        </section>
+
+        <!-- ===== FORMULARIO CREAR / EDITAR ===== -->
+        <section class="formulario-seccion">
+            <h2 id="titulo-formulario">Añadir nueva película</h2>
+
+            <form id="form-pelicula" class="form-crud" novalidate>
+
+                <!-- Campo oculto: si tiene valor estamos editando, si está vacío estamos creando -->
+                <input type="hidden" id="pelicula-id" value="">
+
+                <div class="campo">
+                    <label for="titulo">Título *</label>
+                    <input type="text" id="titulo" required>
+                </div>
+
+                <div class="campo">
+                    <label for="director">Director *</label>
+                    <input type="text" id="director" required>
+                </div>
+
+                <div class="campo">
+                    <label for="duracion">Duración (minutos) *</label>
+                    <input type="number" id="duracion" min="1" required>
+                </div>
+
+                <div class="campo">
+                    <label for="genero">Género</label>
+                    <input type="text" id="genero">
+                </div>
+
+                <div class="campo">
+                    <label for="anio">Año</label>
+                    <input type="number" id="anio" min="1900" max="2100">
+                </div>
+
+                <div class="campo">
+                    <label for="pais">País</label>
+                    <input type="text" id="pais">
+                </div>
+
+                <div class="botones-formulario">
+                    <button type="submit" id="btn-guardar" class="btn-guardar">Guardar</button>
+                    <button type="button" id="btn-cancelar" class="btn-cancelar oculto">Cancelar edición</button>
+                </div>
+            </form>
+
+            <div id="mensaje-formulario" class="mensaje oculto" role="alert"></div>
+        </section>
+
+        <!-- ===== LISTADO ===== -->
+        <section class="listado-seccion">
+            <h2>Películas registradas</h2>
+            <div id="estado-cargando" class="estado">Cargando películas…</div>
+            <div id="estado-error" class="estado error oculto" role="alert"></div>
+            <div id="listado-items" class="grid-items"></div>
+        </section>
+
+    </main>
+
+    <!-- ================== FOOTER ================== -->
+    <div class="footer-gen">
+        <footer class="footer-cont">
+            <div class="footer-col-1">
+                <img src="imgs/PNGBLANCO.png" alt="Logo Festival Blanco" class="logo-img" />
+                <div class="social-icons flex gap-4 mt-4">
+                    <a href="#" title="Twitter"><img src="imgs/Trazado39.png" alt="twitter" /></a>
+                    <a href="#" title="Instagram"><img src="imgs/Trazado40.png" alt="insta" /></a>
+                    <a href="#" title="Facebook"><img src="imgs/Trazado38.png" alt="fb" /></a>
+                </div>
+                <p>© Festival de San Sebastián</p>
+            </div>
+            <div class="footer-col-2">
+                <h4>- Suscríbete a nuestro newsletter - </h4>
+                <div class="newsletter">
+                    <input type="email" placeholder="Correo electrónico" />
+                    <button>Enviar</button>
+                </div>
+            </div>
+            <div class="footer-col-3">
+                <address>
+                    497 Evergreen Rd. Roseville, CA 95673<br>
+                    +44 345 678 903<br>
+                    <a href="mailto:adobeixd@gmail.com">adobeixd@gmail.com</a>
+                </address>
+            </div>
+        </footer>
+    </div>
+
+    <button id="btnTop" aria-label="Volver arriba">↑</button>
+
+    <script src="index.js"></script>
+    <script src="peliculas-api.js"></script>
+</body>
+</html>

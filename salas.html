@@ -8,49 +8,91 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="crud.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
+    <style>
+        .contenedor-db {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0 30px;
+        }
+        .btn-database {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #000000;
+            color: white !important;
+            text-decoration: none !important;
+            border-radius: 8px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+        .btn-database:hover {
+            background-color: #7f7f7f;
+            transform: translateY(-3px);
+        }
+    </style>
 
 <body>
 
-    <header>
+       <header>
         <nav>
+            <!-- Logo -->
             <a href="index.html">
                 <img src="imgs/logozineV.svg" alt="Logo Festival San Sebastián">
             </a>
+
+            <!-- Contenedor Principal: Usa justify-content: space-between; -->
             <div class="contmenu">
+
+                <!-- Grupo Izquierda: Logo + Menú + Idiomas (Corresponde a tu .menu1 original, pero reorganizado) -->
                 <div class="menu1">
+
+                    <!-- Agrupación de Enlaces de Navegación (NOTICIAS, EMISIONES, etc.) -->
                     <div class="nav-links">
                         <a href="Noticias.html" title="Noticias">Noticias</a>
                         <a href="emisiones.html" title="Emisiones">Gestion</a>
-                        <a href="peliculas.html" title="Películas">Películas</a>
-                        <a href="salas.html" title="Salas" class="activo">Salas</a>
-                        <a href="emisiones-admin.html" title="Gestión Emisiones">Gestión</a>
                         <a href="galeria.html" title="Galería">Galería</a>
                         <a href="contacto.html" title="Contacto">Contacto</a>
                     </div>
+
+                    <!-- Idiomas -->
                     <div class="lang-links">
                         <a href="#" title="Español">ES</a>
                         <a href="#" title="Euskera">EU</a>
                         <a href="#" title="Inglés">EN</a>
                     </div>
                 </div>
+
                 <div class="menu2">
+
+                    <!-- Redes sociales -->
                     <div class="social-icons">
+                        <!-- Icono Instagram -->
                         <a href="https://www.instagram.com/sansebastianfes/" title="Instagram">
                             <img src="imgs/Trazado3.png" alt="insta"></a>
+                        <!-- Icono Twitter -->
                         <a href="https://twitter.com/sansebastianfes" title="Twitter">
-                            <img src="imgs/Trazado2.png" alt="twitter"></a>
+                            <img src="imgs/Trazado2.png" alt="twitter">
+                        </a>
+                        <!-- Icono Facebook -->
                         <a href="https://www.facebook.com/sansebastianfestival" title="Facebook">
-                            <img src="imgs/Trazado1.png" alt="fb"></a>
+                            <img src="imgs/Trazado1.png" alt="fb">
+                        </a>
                     </div>
+
+                    <!-- Barra de Búsqueda -->
                     <div class="search-container">
                         <input type="text" placeholder="">
+                        <!-- Icono Buscar -->
                         <div class="search-icon">
                             <a href="#" class="icono-buscar" title="Buscar">
                                 <img src="imgs/Trazado-1.png" alt="buscar" />
                             </a>
                         </div>
                     </div>
+
+                    <!-- Icono Perfil (con la ruta SRC original) -->
                     <div class="pictos ml-4">
                         <a href="InicioSesion.html" class="icono-perfil" title="Perfil">
                             <img src="imgs/User.png" alt="user" />
@@ -60,6 +102,11 @@
             </div>
         </nav>
     </header>
+
+    <div class="contenedor-db">
+        <a href="peliculas.html" class="btn-database">Películas disponibles</a>
+        <a href="emisiones-admin.html" class="btn-database">Emisiones disponibles</a>
+    </div>
 
     <main class="crud-main">
 

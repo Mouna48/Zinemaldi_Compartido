@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Gestión Emisiones - Festival de San Sebastián (73ª edición)</title>
     <link rel="icon" type="image/png" href="imgs/PNGnegrotxiki2.png">
-    <link rel="stylesheet" href="noticias.css">
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="crud.css">
     <style>
         .contenedor-db {
@@ -31,6 +31,7 @@
             transform: translateY(-3px);
         }
     </style>
+</head>
 
 <body>
 
@@ -41,21 +42,16 @@
                 <img src="imgs/logozineV.svg" alt="Logo Festival San Sebastián">
             </a>
 
-            <!-- Contenedor Principal: Usa justify-content: space-between; -->
+            <!-- Contenedor Principal -->
             <div class="contmenu">
 
-                <!-- Grupo Izquierda: Logo + Menú + Idiomas (Corresponde a tu .menu1 original, pero reorganizado) -->
                 <div class="menu1">
-
-                    <!-- Agrupación de Enlaces de Navegación (NOTICIAS, EMISIONES, etc.) -->
                     <div class="nav-links">
                         <a href="Noticias.html" title="Noticias">Noticias</a>
                         <a href="emisiones.html" title="Emisiones">Gestion</a>
                         <a href="galeria.html" title="Galería">Galería</a>
                         <a href="contacto.html" title="Contacto">Contacto</a>
                     </div>
-
-                    <!-- Idiomas -->
                     <div class="lang-links">
                         <a href="#" title="Español">ES</a>
                         <a href="#" title="Euskera">EU</a>
@@ -64,34 +60,24 @@
                 </div>
 
                 <div class="menu2">
-
-                    <!-- Redes sociales -->
                     <div class="social-icons">
-                        <!-- Icono Instagram -->
                         <a href="https://www.instagram.com/sansebastianfes/" title="Instagram">
                             <img src="imgs/Trazado3.png" alt="insta"></a>
-                        <!-- Icono Twitter -->
                         <a href="https://twitter.com/sansebastianfes" title="Twitter">
                             <img src="imgs/Trazado2.png" alt="twitter">
                         </a>
-                        <!-- Icono Facebook -->
                         <a href="https://www.facebook.com/sansebastianfestival" title="Facebook">
                             <img src="imgs/Trazado1.png" alt="fb">
                         </a>
                     </div>
-
-                    <!-- Barra de Búsqueda -->
                     <div class="search-container">
                         <input type="text" placeholder="">
-                        <!-- Icono Buscar -->
                         <div class="search-icon">
                             <a href="#" class="icono-buscar" title="Buscar">
                                 <img src="imgs/Trazado-1.png" alt="buscar" />
                             </a>
                         </div>
                     </div>
-
-                    <!-- Icono Perfil (con la ruta SRC original) -->
                     <div class="pictos ml-4">
                         <a href="InicioSesion.html" class="icono-perfil" title="Perfil">
                             <img src="imgs/User.png" alt="user" />
@@ -102,14 +88,11 @@
         </nav>
     </header>
 
-    <div class="linea-separadora"></div>
-
     <div class="contenedor-db">
         <a href="peliculas.html" class="btn-database">Películas disponibles</a>
         <a href="salas.html" class="btn-database">Salas disponibles</a>
     </div>
 
-    <!-- ================== CONTENIDO ================== -->
     <main class="crud-main">
 
         <section class="intro-seccion">
@@ -117,7 +100,6 @@
             <p>Listado de emisiones del Festival. Cada emisión está asociada a una película y a una sala. Puedes crear, editar y eliminar registros conectados a la base de datos a través de la API de Directus.</p>
         </section>
 
-        <!-- ===== FORMULARIO CREAR / EDITAR ===== -->
         <section class="formulario-seccion">
             <h2 id="titulo-formulario">Añadir nueva emisión</h2>
 
@@ -154,7 +136,6 @@
             <div id="mensaje-formulario" class="mensaje oculto" role="alert"></div>
         </section>
 
-        <!-- =LISTADO  -->
         <section class="listado-seccion">
             <h2>Emisiones registradas</h2>
             <div id="estado-cargando" class="estado">Cargando emisiones…</div>
@@ -164,7 +145,6 @@
 
     </main>
 
-    <!--  FOOTER  -->
     <div class="footer-gen">
         <footer class="footer-cont">
             <div class="footer-col-1">

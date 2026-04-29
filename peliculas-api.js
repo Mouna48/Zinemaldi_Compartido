@@ -1,7 +1,7 @@
 
 /* ----- 1. CONFIGURACIÓN ----- */
 const URL_BASE = "http://localhost:8055/items/pelicula";   
-const TOKEN    = "mbwBfxdyOdCDUxTIa1nkF-jxVcDkNalK";                       
+const TOKEN    = "uos622sC0nh7KSaHtrFvTDetI__wl15z";                       
 
 
 /* ----- 2. REFERENCIAS AL DOM ----- */

@@ -1,4 +1,4 @@
- :root {
+:root {
             --header-bg: #ffffff;
             --footer-bg: #222; 
             --primary: #161616; 
@@ -67,9 +67,6 @@ header {
             font-size: 16px; 
             text-transform: uppercase;
             padding: 5px 10px;
-            
-       
-            
             line-height: 1.5;
             font-weight: normal;
         }
@@ -90,9 +87,7 @@ header {
             display: flex;
             align-items: center;
             border: 1px solid #ccc;
-            
             border-radius: 5px; 
-            
             background-color: transparent;
             margin-right: 15px; 
             height: 30px; 
@@ -105,7 +100,6 @@ header {
             background-color: transparent;
             width: 150px; 
             font-weight: normal;
-            
         }
         
         /* Icono de búsqueda */
@@ -127,7 +121,6 @@ header {
             gap: 15px;
         }
          
-        
         /* Efecto Hover para que crezca el texto */
         .nav-links a:hover {
             transform: scale(1.05); 
@@ -160,13 +153,13 @@ header {
     }
 
     nav img {
-        width: 65px; /* Logo un poco más pequeño */
+        width: 65px;
     }
 
     .contmenu {
         justify-content: space-between;
         gap: 10px;
-        flex-wrap: wrap; /* Permite que los elementos bajen si no caben */
+        flex-wrap: wrap;
     }
 
     .menu1, .menu2 {
@@ -308,9 +301,7 @@ h1::after {
   opacity: 0.85;
 }
 
-/* Para el carrusel 1 */
-
-/* --- ESTILOS DE CARRUSEL CON JS PURO (para index.css) --- */
+/* --- ESTILOS DE CARRUSEL --- */
 
 .banner-carrusel {
     max-width: 100%;
@@ -320,7 +311,7 @@ h1::after {
 .carrusel-slide {
     position: relative;
     width: 100%; 
-    height: 500px; /* Ajusta esta altura a tu gusto */
+    height: 500px;
     overflow: hidden; 
 }
 
@@ -336,19 +327,16 @@ h1::after {
     left: 0;
     width: 100%;
     height: 100%;
-    
-    /* Animación y ocultación inicial */
     transition: opacity 0.6s ease-in-out;
-    opacity: 0; /* Oculta todos los items por defecto */
+    opacity: 0;
     z-index: 1;
 }
 
 .carrusel-item.active {
-    opacity: 1; /* Muestra solo el item activo */
+    opacity: 1;
     z-index: 2; 
 }
 
-/* Estilo de las imágenes */
 .carrusel-item img {
     width: 100%;
     height: 100%;
@@ -378,13 +366,11 @@ h1::after {
 .carrusel-control-prev { left: 10px; }
 .carrusel-control-next { right: 10px; }
 
-/* Estilo de tus imágenes PNG dentro de los botones */
 .icono-control {
     width: 25px; 
     height: 25px; 
 }
 
-/* Ocultar el texto de ayuda si está presente */
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -395,7 +381,6 @@ h1::after {
     clip: rect(0, 0, 0, 0);
     border: 0;
 }
-
 
 /* Indicadores (puntos de abajo) */
 .carrusel-indicators {
@@ -424,127 +409,10 @@ h1::after {
     background-color: #f0f0f0;
 }
 
-/* Asegúrate de que este bloque se mantenga para la compatibilidad de iconos */
-/* Aunque ya no debería ser necesario si usas el HTML de arriba */
 .carousel-control-prev span,
 .carousel-control-next span {
     display: none;
 }
-
-/*Estilos del Carrusel 2*/
-
-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 15px;
-}
-
-nav img {
-    width: 80px;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-}
-
-nav ul li a {
-    color: black;
-    text-decoration: none;
-    font-weight: 500;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-	 display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-nav ul li a:hover {
-    background: rgba(0,0,0,0.05);
-}
-
-/* Tablets y pantallas medianas */
-@media (max-width: 992px) {
-    header {
-        padding: 10px 20px;
-    }
-
-    nav img {
-        width: 65px; /* Logo un poco más pequeño */
-    }
-
-    .contmenu {
-        justify-content: space-between;
-        gap: 10px;
-        flex-wrap: wrap; /* Permite que los elementos bajen si no caben */
-    }
-
-    .menu1, .menu2 {
-        gap: 10px;
-    }
-
-    .nav-links a {
-        font-size: 14px;
-        padding: 4px 6px;
-    }
-
-    .lang-links {
-        gap: 6px;
-    }
-
-    .contmenu img {
-        height: 18px;
-    }
-
-    .search-container input {
-        width: 100px;
-    }
-}
-
-/* Móviles */
-@media (max-width: 600px) {
-    nav img {
-        width: 50px;
-    }
-
-    .contmenu {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 8px;
-    }
-
-    .menu1, .menu2 {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 8px;
-    }
-
-    .nav-links a {
-        font-size: 13px;
-        padding: 3px 5px;
-    }
-
-    .lang-links {
-        gap: 4px;
-    }
-
-    .search-container {
-        height: 26px;
-        margin-right: 5px;
-    }
-
-    .search-container input {
-        width: 80px;
-    }
-
-    .contmenu img {
-        height: 15px;
-    }
-}
-
 
 /* Banner */
 .banner img {
@@ -561,7 +429,6 @@ nav ul li a:hover {
 
 /* Secciones */
 
-
 .sect {
     padding: 60px 5%;
     background-color: #ffffff;
@@ -569,12 +436,11 @@ nav ul li a:hover {
     margin: 0 auto;
 }
 
-/* Estilo del Título con el símbolo » */
 .sect h1 {
     font-family: "Bahnschrift", "Segoe UI", sans-serif;
     font-size: 28px;
     color: #666;
-    text-align: left; /* Alineado a la izquierda como la foto */
+    text-align: left;
     margin-bottom: 30px;
     font-weight: bold;
 }
@@ -583,9 +449,6 @@ nav ul li a:hover {
     content: "» ";
     color: #999;
 }
-
-/* Quitamos la línea de abajo  */
-.sect h1::after { display: none; }
 
 /* Contenedor principal de las tarjetas */
 .contenedor-recientes {
@@ -598,7 +461,7 @@ nav ul li a:hover {
 .card-reciente {
     background: #fff;
     border: 1px solid #e0e0e0;
-    border-radius: 25px; /* Bordes muy redondeados */
+    border-radius: 25px;
     overflow: hidden;
     display: flex;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -634,7 +497,7 @@ nav ul li a:hover {
 
 .card-h .img-box {
     flex: 1.2;
-    order: 2; /* Imagen a la derecha */
+    order: 2;
 }
 
 /* Contenedores de texto */
@@ -669,7 +532,7 @@ nav ul li a:hover {
     color: #aaa;
 }
 
-/* Ajuste móvil */
+/* Ajuste móvil recientes */
 @media (max-width: 992px) {
     .contenedor-recientes {
         flex-direction: column;
@@ -680,52 +543,96 @@ nav ul li a:hover {
     }
     .card-h .img-box { order: 0; }
 }
-/* Sección premiados y premiadas */
-/* Fuente y visualización base */
-.mi-card-premiadoas {
-    font-family: Arial, sans-serif;
-    border-bottom-right-radius: 88px !important; /* Radio reducido para móvil */
+
+/* ============================================
+   ESTILOS SECCIÓN PREMIADOS Y PREMIADAS
+   ============================================ */
+.premiados-section {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 20px;
+}
+
+/* La rejilla: 3 columnas en desktop, 2 en tablet, 1 en móvil */
+.premiados-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+/* Cada tarjeta de premiado */
+.premiado-card {
+    background: #fff;
+    border: none;
+    border-radius: 4px;
     overflow: hidden;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
-/* Para que el fondo negro suba un poco sobre la foto y sea más largo */
-.mi-card-premiadoas .card-body {
-    margin-top: -30px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    position: relative;
+/* Imagen de la tarjeta */
+.premiado-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
 }
 
-/* Efectos Responsive para pantallas grandes (PC) */
-@media (min-width: 768px) {
-    .mi-card-premiadoas {
-        border-bottom-right-radius: 80px !important; /* Radio grande en PC */
+/* Cuerpo oscuro con el nombre */
+.premiado-body {
+    background-color: #212529;
+    text-align: center;
+    padding: 1rem;
+    flex-grow: 1;
+}
+
+/* Texto del nombre */
+.premiado-nombre {
+    color: #fff;
+    font-size: 1.75rem;
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+    .premiados-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
-    
-    .mi-card-premiadoas .card-body {
-        margin-top: -50px; /* Sube más en pantallas grandes */
+}
+
+/* Móvil */
+@media (max-width: 600px) {
+    .premiados-grid {
+        grid-template-columns: 1fr;
+    }
+    .premiado-nombre {
+        font-size: 1.4rem;
     }
 }
 
 /* Footer */
  .footer-gen {
-            background-color: #242424; /* Fondo oscuro */
-            color: #f0f0f0; /* Color de texto claro */
+            background-color: #242424;
+            color: #f0f0f0;
             padding: 40px 0;
-            margin-top: 50px; /* Espacio entre el contenido principal y el footer */
+            margin-top: 50px;
         }
 
         .footer-cont {
             display: flex;
-            justify-content: space-between; /* Distribuye las 3 columnas */
+            justify-content: space-between;
             align-items: flex-start;
-            max-width: 1200px; /* Mismo ancho que el header */
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 40px; /* El mismo padding lateral que el header */
+            padding: 0 40px;
         }
 
         .footer-col-1 .logo-img {
-            height: 66px; /* Tamaño del logo en el footer */
+            height: 66px;
             width: auto;
         }
         
@@ -774,7 +681,7 @@ nav ul li a:hover {
             background-color: #333;
             color: white;
             outline: none;
-			font-weight: 300;
+            font-weight: 300;
         }
 
         .footer-col-2 button {
@@ -806,20 +713,20 @@ nav ul li a:hover {
 
         @media (max-width: 600px) {
     .footer-cont {
-        flex-direction: column;   /* Las columnas se apilan */
-        align-items: center;      /* Centra todo */
-        text-align: center;       /* Centra texto */
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
         padding: 0 20px;
     }
 
     .footer-col-1, 
     .footer-col-2, 
     .footer-col-3 {
-        margin-bottom: 20px;      /* Espacio entre secciones */
+        margin-bottom: 20px;
     }
 
     .footer-col-1 .logo-img {
-        height: 50px;             /* Logo más pequeño */
+        height: 50px;
     }
 
     .footer-col-1 .logo-text {
@@ -831,9 +738,9 @@ nav ul li a:hover {
     }
 
     .footer-col-3 {
-        font-size: 12px;          /* Texto más pequeño */
+        font-size: 12px;
         line-height: 1.8;
-        text-align: center;       /* Centra dirección, número y mail */
+        text-align: center;
     }
 
     .footer-col-2 input[type="email"] {
@@ -846,28 +753,30 @@ nav ul li a:hover {
         padding: 0 10px;
     }
 }
+
 #btnTop {
-    position: fixed !important; /* Asegura que se quede fijo en pantalla */
+    position: fixed !important;
     bottom: 30px;
     right: 30px;
-    display: none; /* Se oculta por defecto hasta el scroll */
+    display: none;
     background-color: #333;
     color: #fff;
     border: none;
-    width: 50px;   /* Definimos un tamaño fijo para que sea un círculo */
+    width: 50px;
     height: 50px;
     border-radius: 50%;
     cursor: pointer;
     font-size: 20px;
-    z-index: 9999; /* Valor muy alto para que esté por encima de todo */
+    z-index: 9999;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     transition: background 0.3s, transform 0.3s;
 }
 
 #btnTop:hover {
     background-color: #555;
-    transform: scale(1.1); /* Efecto visual al pasar el ratón */
+    transform: scale(1.1);
 }
+
 .fade-in {
     opacity: 0;
     transform: translateY(20px);
@@ -878,10 +787,9 @@ nav ul li a:hover {
     opacity: 1;
     transform: translateY(0);
 }
-/* Contenedor para centrar el botón si quieres */
+
 .contenedor-db {
     text-align: center;
     padding: 20px;
     margin: 20px 0;
 }
-

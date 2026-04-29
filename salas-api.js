@@ -1,16 +1,10 @@
-/* =========================================================================
-   salas-api.js
-   CRUD completo de Salas contra la API REST de Directus.
-   Mismo patrón que peliculas-api.js, adaptado a los campos de Salas.
-   ========================================================================= */
-
-
-/* ----- 1. CONFIGURACIÓN ----- */
+/* CRUD completo de Salas */
+/* CONFIGURACIÓN  */
 const URL_BASE = "http://localhost:8055/items/sala";
-const TOKEN    = "PwZiNepO2yt4NUyKI6p4aKfXkqoMIQXz";   // ← pega aquí el token generado en Directus
+const TOKEN    = "OYxtn1U7wdud0JfKVNDs4yULVKAcejZp"; 
 
 
-/* ----- 2. REFERENCIAS AL DOM ----- */
+/* REFERENCIAS AL DOM  */
 const formulario        = document.getElementById("form-sala");
 const tituloFormulario  = document.getElementById("titulo-formulario");
 const inputId           = document.getElementById("sala-id");
@@ -24,7 +18,7 @@ const estadoError       = document.getElementById("estado-error");
 const mensajeFormulario = document.getElementById("mensaje-formulario");
 
 
-/* ----- 3. LISTAR (GET) ----- */
+/*  LISTAR (GET) */
 async function cargarSalas() {
 
     estadoCargando.classList.remove("oculto");
@@ -64,7 +58,7 @@ async function cargarSalas() {
 }
 
 
-/* ----- 4. PINTAR LAS TARJETAS ----- */
+/*  PINTAR LAS TARJETAS  */
 function pintarSalas(salas) {
     cajaListado.innerHTML = "";
 
@@ -93,7 +87,7 @@ function pintarSalas(salas) {
 }
 
 
-/* ----- 5. CREAR (POST) y ACTUALIZAR (PATCH) ----- */
+/* CREAR (POST) y ACTUALIZAR (PATCH) */
 formulario.addEventListener("submit", async (evento) => {
     evento.preventDefault();
     ocultarMensaje();
@@ -114,7 +108,7 @@ formulario.addEventListener("submit", async (evento) => {
         let respuesta;
 
         if (idActual) {
-            // ----- ACTUALIZAR (PATCH) -----
+            // -ACTUALIZAR 
             respuesta = await fetch(`${URL_BASE}/${idActual}`, {
                 method: "PATCH",
                 headers: {
@@ -124,7 +118,7 @@ formulario.addEventListener("submit", async (evento) => {
                 body: JSON.stringify(datos)
             });
         } else {
-            // ----- CREAR (POST) -----
+            //  CREAR (POST) 
             respuesta = await fetch(URL_BASE, {
                 method: "POST",
                 headers: {
@@ -151,7 +145,7 @@ formulario.addEventListener("submit", async (evento) => {
 });
 
 
-/* ----- 6. PREPARAR EDICIÓN ----- */
+/*  PREPARAR EDICIÓN  */
 async function prepararEdicion(id) {
     ocultarMensaje();
 
@@ -186,11 +180,11 @@ async function prepararEdicion(id) {
 }
 
 
-/* ----- 7. CANCELAR EDICIÓN ----- */
+/*  CANCELAR EDICIÓN  */
 btnCancelar.addEventListener("click", resetearFormulario);
 
 
-/* ----- 8. BORRAR (DELETE) ----- */
+/*  BORRAR (DELETE)  */
 async function borrarSala(id) {
 
     if (!confirm("¿Seguro que quieres borrar esta sala?")) return;
@@ -219,7 +213,7 @@ async function borrarSala(id) {
 }
 
 
-/* ----- 9. UTILIDADES ----- */
+/*  UTILIDADES  */
 function resetearFormulario() {
     formulario.reset();
     inputId.value                = "";
@@ -239,5 +233,5 @@ function ocultarMensaje() {
 }
 
 
-/* ----- 10. ARRANQUE ----- */
+/*  ARRANCAR */
 cargarSalas();

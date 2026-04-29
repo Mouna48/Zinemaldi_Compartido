@@ -2,7 +2,7 @@
 
 /*  CONFIGURACIÓN  */
 const URL_BASE = "http://localhost:8055/items/emision";
-const TOKEN    = "uos622sC0nh7KSaHtrFvTDetI__wl15z"; 
+const TOKEN    = "OYxtn1U7wdud0JfKVNDs4yULVKAcejZp"; 
 
 
 /*  REFERENCIAS AL DOM */

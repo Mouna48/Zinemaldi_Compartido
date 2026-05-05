@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // 1. BOTÓN VOLVER ARRIBA (Global)
+    // 1. BOTÓN VOLVER ARRIBA
     const btnTop = document.getElementById("btnTop");
     if (btnTop) {
         window.addEventListener('scroll', () => { 
@@ -16,6 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+
+
+    
     // 2. LÓGICA DEL BUSCADOR
     const searchBtn = document.querySelector('.icono-buscar');
     const searchInput = document.querySelector('.search-container input');
@@ -143,12 +146,12 @@ document.addEventListener('DOMContentLoaded', () => {
             // Gestión de errores e impedimento de envío (PreventDefault)
             if (errores.length > 0) {
                 event.preventDefault(); // Detiene el envío del formulario
-                alert("⚠️ ERRORES EN EL FORMULARIO:\n\n" + errores.join("\n"));
+                alert("ERRORES EN EL FORMULARIO:\n\n" + errores.join("\n"));
             } else {
                 // Si no hay errores, se procede con la lógica de negocio
                 localStorage.setItem("emailGuardado", emailInput.value);
                 localStorage.setItem("mensajeGuardado", mensajeInput.value);
-                alert("✅ Formulario validado correctamente. ¡Datos guardados!");
+                alert("Formulario validado correctamente. ¡Datos guardados!");
             }
         });
     }
